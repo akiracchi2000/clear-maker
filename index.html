@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Maker - Student Support</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- KaTeX for Math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+        integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script>
+
+    <!-- html2canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Overlay for Drag & Drop -->
+        <div id="drop-overlay" class="hidden">
+            <div class="drop-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                <p>ここにファイルをドロップして解析開始</p>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>設定</h2>
+                    <button id="close-settings" class="icon-btn">&times;</button>
+                </div>
+                <div class="form-group">
+                    <label for="api-key">Gemini API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter your Gemini API Key">
+                </div>
+                <div class="form-group">
+                    <label for="model-select">Model</label>
+                    <select id="model-select">
+                        <option value="gemini-3-pro-preview">Gemini 3 Pro Preview</option>
+                        <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash Exp</option>
+                        <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                    </select>
+                </div>
+                <button id="save-settings" class="primary-btn">保存</button>
+
+                <hr class="separator" style="margin: 24px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+                <div class="modal-header" style="margin-bottom: 16px;">
+                    <h3>プロンプト管理</h3>
+                </div>
+                <div class="control-group" style="gap: 12px;">
+                    <button id="export-prompts-btn" class="secondary-btn">📤 設定をバックアップ (JSON)</button>
+                    <button id="import-prompts-btn" class="secondary-btn">📥 バックアップから復元</button>
+                    <input type="file" id="import-prompts-input" accept=".json" class="hidden">
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">※ 科目ごとの固定プロンプトを一括で保存・復元します。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Panel: Controls & Prompts -->
+        <section class="left-panel">
+            <header>
+                <div class="branding">
+                    <div class="logo">Clear Maker</div>
+                    <span class="version">v1.5.1</span>
+                </div>
+                <div class="header-actions" style="display: flex; gap: 8px;">
+                    <button id="theme-toggle" class="icon-btn" title="テーマ切り替え">🌙</button>
+                    <button id="open-settings" class="icon-btn" title="設定">⚙️</button>
+                </div>
+            </header>
+
+            <div class="control-group">
+                <label for="subject-select">科目選択</label>
+                <select id="subject-select">
+                    <option value="math">数学</option>
+                    <option value="english">英語</option>
+                    <option value="science">理科</option>
+                    <option value="social">社会</option>
+                    <option value="japanese">国語</option>
+                    <option value="other" selected>その他</option>
+                </select>
+            </div>
+
+            <div class="control-group flex-grow">
+                <label for="system-prompt">固定プロンプト (科目ごとに保存されます)</label>
+                <textarea id="system-prompt" spellcheck="false" placeholder="ここに基本の指示を入力してください..."></textarea>
+            </div>
+
+            <div class="control-group">
+                <label for="user-prompt">追加プロンプト</label>
+                <textarea id="user-prompt" rows="3" placeholder="ここに入力された指示や質問への回答を作成します..."></textarea>
+            </div>
+
+            <!-- Question (問題) Zone -->
+            <div class="control-group drop-zone-group" data-type="question">
+                <div class="zone-header">
+                    <label>問題</label>
+                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                </div>
+                <input type="file" id="file-input-question" accept="image/*,application/pdf" multiple class="hidden">
+                <div id="drop-zone-question" class="drop-area">
+                    <p>ファイルを選択または，<br>ここに問題をドロップ</p>
+                </div>
+                <div id="thumbnails-question" class="thumbnail-container-mini hidden"></div>
+            </div>
+
+            <!-- Model Answer (模範解答) Zone -->
+            <div class="control-group drop-zone-group" data-type="model">
+                <div class="zone-header">
+                    <label>模範解答</label>
+                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                </div>
+                <input type="file" id="file-input-model" accept="image/*,application/pdf" multiple class="hidden">
+                <div id="drop-zone-model" class="drop-area">
+                    <p>ファイルを選択または，<br>ここに模範解答をドロップ</p>
+                </div>
+                <div id="thumbnails-model" class="thumbnail-container-mini hidden"></div>
+            </div>
+
+            <!-- Student Answer (生徒の解答) Zone -->
+            <div class="control-group drop-zone-group" data-type="student">
+                <div class="zone-header">
+                    <label>生徒の解答</label>
+                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                </div>
+                <input type="file" id="file-input-student" accept="image/*,application/pdf" multiple class="hidden">
+                <div id="drop-zone-student" class="drop-area">
+                    <p>ファイルを選択または，<br>ここに生徒の解答をドロップ</p>
+                </div>
+                <div id="thumbnails-student" class="thumbnail-container-mini hidden"></div>
+            </div>
+
+            <div class="status-bar">
+                <span id="file-status">画像合計: 0枚</span>
+            </div>
+
+            <div class="control-group" style="margin-top: auto; padding-top: 20px;">
+                <button id="generate-btn" class="primary-btn large-btn" disabled>✨ 解析を実行</button>
+            </div>
+        </section>
+
+        <div class="panel right-panel">
+            <div class="response-header">
+                <h2>🤖AIカガワ先生の返答🤖</h2>
+                <div class="response-actions">
+                    <!-- Normal Mode Actions -->
+                    <button id="edit-btn" class="icon-btn hidden" title="編集">✏️</button>
+                    <button id="copy-btn" class="icon-btn hidden" title="コピー">📋</button>
+                    <button id="screenshot-btn" class="icon-btn hidden" title="画像として保存">📷</button>
+
+                    <!-- Edit Mode Actions -->
+                    <div id="edit-actions" class="hidden" style="display: flex; gap: 8px;">
+                        <button id="cancel-edit-btn" class="secondary-btn" title="キャンセル">❌</button>
+                        <button id="save-edit-btn" class="primary-btn" title="保存してプレビュー">💾</button>
+                    </div>
+                </div>
+            </div>
+            <div id="loading-indicator" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Generating response...</span>
+            </div>
+            <div id="response-area" class="response-area">
+                <div class="placeholder-text">ここにAIの回答が表示されます</div>
+            </div>
+            <textarea id="response-editor" class="response-editor hidden" spellcheck="false"
+                placeholder="Markdownを編集..."></textarea>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
