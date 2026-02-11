@@ -700,6 +700,19 @@ input:focus {
     }
 }
 
+/* Large Modal (for README) */
+.modal-content.large-modal {
+    max-width: 800px;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .modal-content.large-modal {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+
 /* Paste Option Buttons */
 .paste-option-btn {
     height: auto;

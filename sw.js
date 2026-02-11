@@ -1,10 +1,11 @@
-const CACHE_NAME = 'clear-maker-v1.5.3'; // バージョンを変える時はここを変更
+const CACHE_NAME = 'clear-maker-v1.5.4'; // バージョンを変える時はここを変更
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './style.css',
     './app.js',
     './manifest.json',
+    './README.md',
     './icon-192.png',
     './icon-512.png',
     'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap',
