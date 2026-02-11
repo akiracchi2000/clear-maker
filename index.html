@@ -102,12 +102,37 @@
             </div>
         </div>
 
+        <!-- Paste Selection Modal -->
+        <div id="paste-modal" class="modal hidden">
+            <div class="modal-content" style="max-width: 500px;">
+                <div class="modal-header">
+                    <h2>画像を貼り付け</h2>
+                    <button id="close-paste-modal" class="icon-btn">&times;</button>
+                </div>
+                <p style="margin-bottom: 20px; color: var(--text-secondary);">貼り付け先のフォルダを選択してください</p>
+                <div class="paste-options" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                    <button class="paste-option-btn secondary-btn" data-target="question">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">❓</span>
+                        問題
+                    </button>
+                    <button class="paste-option-btn secondary-btn" data-target="model">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">💡</span>
+                        模範解答
+                    </button>
+                    <button class="paste-option-btn secondary-btn" data-target="student">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">✏️</span>
+                        生徒の解答
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Left Panel: Controls & Prompts -->
         <section class="left-panel">
             <header>
                 <div class="branding">
                     <div class="logo">Clear Maker</div>
-                    <span class="version">v1.5.2</span>
+                    <span class="version">v1.5.3</span>
                 </div>
                 <div class="header-actions" style="display: flex; gap: 8px;">
                     <button id="theme-toggle" class="icon-btn" title="テーマ切り替え">🌙</button>
@@ -137,44 +162,7 @@
                 <textarea id="user-prompt" rows="3" placeholder="ここに入力された指示や質問への回答を作成します..."></textarea>
             </div>
 
-            <!-- Question (問題) Zone -->
-            <div class="control-group drop-zone-group" data-type="question">
-                <div class="zone-header">
-                    <label>問題</label>
-                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
-                </div>
-                <input type="file" id="file-input-question" accept="image/*,application/pdf" multiple class="hidden">
-                <div id="drop-zone-question" class="drop-area">
-                    <p>ファイルを選択または，<br>ここに問題をドロップ</p>
-                </div>
-                <div id="thumbnails-question" class="thumbnail-container-mini hidden"></div>
-            </div>
-
-            <!-- Model Answer (模範解答) Zone -->
-            <div class="control-group drop-zone-group" data-type="model">
-                <div class="zone-header">
-                    <label>模範解答</label>
-                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
-                </div>
-                <input type="file" id="file-input-model" accept="image/*,application/pdf" multiple class="hidden">
-                <div id="drop-zone-model" class="drop-area">
-                    <p>ファイルを選択または，<br>ここに模範解答をドロップ</p>
-                </div>
-                <div id="thumbnails-model" class="thumbnail-container-mini hidden"></div>
-            </div>
-
-            <!-- Student Answer (生徒の解答) Zone -->
-            <div class="control-group drop-zone-group" data-type="student">
-                <div class="zone-header">
-                    <label>生徒の解答</label>
-                    <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
-                </div>
-                <input type="file" id="file-input-student" accept="image/*,application/pdf" multiple class="hidden">
-                <div id="drop-zone-student" class="drop-area">
-                    <p>ファイルを選択または，<br>ここに生徒の解答をドロップ</p>
-                </div>
-                <div id="thumbnails-student" class="thumbnail-container-mini hidden"></div>
-            </div>
+            <!-- Moved to Right Panel -->
 
             <div class="status-bar">
                 <span id="file-status">画像合計: 0枚</span>
@@ -186,6 +174,48 @@
         </section>
 
         <div class="panel right-panel">
+            <!-- Top Drop Zones -->
+            <div class="top-drop-zones">
+                <!-- Question (問題) Zone -->
+                <div class="control-group drop-zone-group" data-type="question">
+                    <div class="zone-header">
+                        <label>問題</label>
+                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                    </div>
+                    <input type="file" id="file-input-question" accept="image/*,application/pdf" multiple
+                        class="hidden">
+                    <div id="drop-zone-question" class="drop-area">
+                        <p>ファイルを選択または，<br>ここに問題をドロップ</p>
+                    </div>
+                    <div id="thumbnails-question" class="thumbnail-container-mini hidden"></div>
+                </div>
+
+                <!-- Model Answer (模範解答) Zone -->
+                <div class="control-group drop-zone-group" data-type="model">
+                    <div class="zone-header">
+                        <label>模範解答</label>
+                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                    </div>
+                    <input type="file" id="file-input-model" accept="image/*,application/pdf" multiple class="hidden">
+                    <div id="drop-zone-model" class="drop-area">
+                        <p>ファイルを選択または，<br>ここに模範解答をドロップ</p>
+                    </div>
+                    <div id="thumbnails-model" class="thumbnail-container-mini hidden"></div>
+                </div>
+
+                <!-- Student Answer (生徒の解答) Zone -->
+                <div class="control-group drop-zone-group" data-type="student">
+                    <div class="zone-header">
+                        <label>生徒の解答</label>
+                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                    </div>
+                    <input type="file" id="file-input-student" accept="image/*,application/pdf" multiple class="hidden">
+                    <div id="drop-zone-student" class="drop-area">
+                        <p>ファイルを選択または，<br>ここに生徒の解答をドロップ</p>
+                    </div>
+                    <div id="thumbnails-student" class="thumbnail-container-mini hidden"></div>
+                </div>
+            </div>
             <div class="response-header">
                 <h2>🤖AIカガワ先生の返答🤖</h2>
                 <div class="response-actions">
