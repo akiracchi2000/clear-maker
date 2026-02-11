@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clear-maker-v1.5.2';
+const CACHE_NAME = 'clear-maker-v1.5.2'; // バージョンを変える時はここを変更
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -18,14 +18,13 @@ const ASSETS_TO_CACHE = [
 ];
 
 self.addEventListener('install', (event) => {
+    // 【重要】待機中のSWを強制的にスキップして即時有効にする
+    self.skipWaiting();
+
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('Opened cache');
-                // Create placeholders for icons if they don't exist yet to avoid install failure? 
-                // Actually, if a file fails to fetch, addAll might fail. 
-                // For safety, let's try to cache what we can, but addAll is atomic.
-                // We will assume icons will be present.
                 return cache.addAll(ASSETS_TO_CACHE);
             })
     );
@@ -35,21 +34,20 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then((response) => {
-                // Cache hit - return response
                 if (response) {
                     return response;
                 }
                 return fetch(event.request).then(
                     (response) => {
                         // Check if we received a valid response
+                        // Note: CDNs (CORS) might return type 'cors', not 'basic'.
+                        // If you want to cache CDNs dynamically that are NOT in ASSETS_TO_CACHE, 
+                        // you might need to allow 'cors' type as well.
+                        // For now, keeping your original logic is safer for security.
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
 
-                        // IMPORTANT: Clone the response. A response is a stream
-                        // and because we want the browser to consume the response
-                        // as well as the cache consuming the response, we need
-                        // to clone it so we have two streams.
                         var responseToCache = response.clone();
 
                         caches.open(CACHE_NAME)
@@ -75,6 +73,9 @@ self.addEventListener('activate', (event) => {
                     }
                 })
             );
+        }).then(() => {
+            // 【重要】新しいSWがすぐにページ（クライアント）を制御下に置くようにする
+            return self.clients.claim();
         })
     );
 });
