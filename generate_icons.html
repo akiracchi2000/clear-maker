@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Maker アイコン生成</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .icon-preview {
+            margin: 20px;
+        }
+
+        canvas {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>アイコン生成ツール</h1>
+        <p>以下のボタンを押して、PWA用のアイコン画像を保存してください。<br>（保存後、GitHubにアップロードしてください）</p>
+
+        <div class="icon-preview">
+            <h3>icon-192.png (192x192)</h3>
+            <canvas id="canvas192" width="192" height="192"></canvas>
+            <br>
+            <button onclick="downloadIcon(192)">ダウンロード</button>
+        </div>
+
+        <div class="icon-preview">
+            <h3>icon-512.png (512x512)</h3>
+            <canvas id="canvas512" width="512" height="512"></canvas>
+            <br>
+            <button onclick="downloadIcon(512)">ダウンロード</button>
+        </div>
+    </div>
+
+    <script>
+        function drawIcon(size, canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = '#0f172a'; // Dark blue theme color
+            ctx.fillRect(0, 0, size, size);
+
+            // Checkmark
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = size * 0.1;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(size * 0.25, size * 0.5);
+            ctx.lineTo(size * 0.45, size * 0.7);
+            ctx.lineTo(size * 0.75, size * 0.3);
+            ctx.stroke();
+        }
+
+        function downloadIcon(size) {
+            const canvas = document.getElementById('canvas' + size);
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Initialize
+        drawIcon(192, 'canvas192');
+        drawIcon(512, 'canvas512');
+    </script>
+</body>
+
+</html>

@@ -10,6 +10,7 @@
     --glass-blur: 12px;
     --radius-lg: 16px;
     --radius-md: 8px;
+    --bg-secondary: rgba(30, 41, 59, 0.5);
     --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
@@ -21,6 +22,7 @@
     --text-secondary: #64748b;
     --accent-color: #2563eb;
     --accent-hover: #1d4ed8;
+    --bg-secondary: rgba(255, 255, 255, 0.8);
     --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
 }
 
@@ -730,4 +732,66 @@ input:focus {
     border-color: var(--accent-color);
     background-color: rgba(59, 130, 246, 0.1);
     transform: translateY(-2px);
+}
+
+/* Markdown Body Styles */
+.markdown-body {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3em;
+}
+
+.markdown-body p {
+    margin-bottom: 1em;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+.markdown-body li {
+    margin-bottom: 0.5em;
+}
+
+.markdown-body code {
+    background-color: rgba(128, 128, 128, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.markdown-body pre {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+/* Image Grid Layout for Response */
+.response-images-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.response-preview-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
 }
