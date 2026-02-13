@@ -42,10 +42,31 @@
                 navigator.serviceWorker.register('./sw.js')
                     .then(registration => {
                         console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+                        // 更新が見つかった場合の処理
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // 新しいバージョンがインストールされ、待機中
+                                    // sw.jsのskipWaiting()によりすぐにactivateされるはずだが、念のためログ出力
+                                    console.log('New content is available; please refresh.');
+                                }
+                            });
+                        });
                     })
                     .catch(err => {
                         console.log('ServiceWorker registration failed: ', err);
                     });
+
+                // 新しいService Workerがコントロールを開始したらページをリロード
+                let refreshing = false;
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (!refreshing) {
+                        refreshing = true;
+                        window.location.reload();
+                    }
+                });
             });
         }
     </script>
@@ -139,7 +160,7 @@
             <header>
                 <div class="branding">
                     <div class="logo">Clear Maker</div>
-                    <span class="version-tag">v1.5.10</span>
+                    <span class="version-tag">v1.5.11</span>
                 </div>
                 <div class="header-actions" style="display: flex; gap: 8px;">
                     <button id="theme-toggle" class="icon-btn" title="テーマ切り替え">🌙</button>
@@ -270,7 +291,7 @@
         </div>
     </div>
 
-    <script src="app.js?v=1.5.9"></script>
+    <script src="app.js?v=1.5.11"></script>
 </body>
 
 </html>
