@@ -392,7 +392,7 @@ _fK();
 }
 function _fK() {
 const total = _s.files.question.length + _s.files.model.length + _s.files.student.length;
-_e.fileStatus.textContent = `画像合計: ${total}枚 (問:${state.files.question.length}, 模範:${state.files.model.length}, 生徒:${state.files.student.length})`;
+_e.fileStatus.textContent = `画像合計: ${total}枚 (問:${_s.files.question.length}, 模範:${_s.files.model.length}, 生徒:${_s.files.student.length})`;
 }
 async function _fL() {
 const totalFiles = _s.files.question.length + _s.files.model.length + _s.files.student.length;
@@ -454,7 +454,7 @@ safetySettings: [
 ]
 };
 try {
-const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${state.model}:generateContent?key=${state.apiKey}`, {
+const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${_s.model}:generateContent?key=${_s.apiKey}`, {
 method: _S[155],
 headers: { [_S[156]]: _S[157] },
 body: JSON.stringify(requestBody)
