@@ -39,7 +39,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
+                navigator.serviceWorker.register('./sw.js?v=1.5.15')
                     .then(registration => {
                         console.log('ServiceWorker registration successful with scope: ', registration.scope);
 
@@ -161,7 +161,7 @@
             <header>
                 <div class="branding">
                     <div class="logo">Clear Maker</div>
-                    <span class="version-tag">v1.5.13</span>
+                    <span class="version-tag">v1.5.15</span>
                 </div>
                 <div class="header-actions" style="display: flex; gap: 8px;">
                     <button id="theme-toggle" class="icon-btn" title="テーマ切り替え">🌙</button>
@@ -209,7 +209,13 @@
                 <div class="control-group drop-zone-group" data-type="question">
                     <div class="zone-header">
                         <label>問題</label>
-                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        <div class="zone-controls" style="display: flex; align-items: center; gap: 8px;">
+                            <label class="checkbox-label" title="生成結果に元の画像を表示します"
+                                style="font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: normal;">
+                                <input type="checkbox" id="include-question" checked> 画像を引用
+                            </label>
+                            <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        </div>
                     </div>
                     <input type="file" id="file-input-question" accept="image/*,application/pdf" multiple
                         class="hidden">
@@ -223,7 +229,13 @@
                 <div class="control-group drop-zone-group" data-type="model">
                     <div class="zone-header">
                         <label>模範解答</label>
-                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        <div class="zone-controls" style="display: flex; align-items: center; gap: 8px;">
+                            <label class="checkbox-label" title="生成結果に元の画像を表示します"
+                                style="font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: normal;">
+                                <input type="checkbox" id="include-model" checked> 画像を引用
+                            </label>
+                            <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        </div>
                     </div>
                     <input type="file" id="file-input-model" accept="image/*,application/pdf" multiple class="hidden">
                     <div id="drop-zone-model" class="drop-area">
@@ -236,7 +248,13 @@
                 <div class="control-group drop-zone-group" data-type="student">
                     <div class="zone-header">
                         <label>生徒の解答</label>
-                        <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        <div class="zone-controls" style="display: flex; align-items: center; gap: 8px;">
+                            <label class="checkbox-label" title="生成結果に元の画像を表示します"
+                                style="font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: normal;">
+                                <input type="checkbox" id="include-student" checked> 画像を引用
+                            </label>
+                            <button class="clear-zone-btn icon-btn-small" title="クリア">🗑️</button>
+                        </div>
                     </div>
                     <input type="file" id="file-input-student" accept="image/*,application/pdf" multiple class="hidden">
                     <div id="drop-zone-student" class="drop-area">
@@ -292,7 +310,7 @@
         </div>
     </div>
 
-    <script src="app.js?v=1.5.13"></script>
+    <script src="app.js?v=1.5.15"></script>
 </body>
 
 </html>

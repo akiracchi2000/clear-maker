@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clear-maker-v1.5.13'; // バージョンを変える時はここを変更
+const CACHE_NAME = 'clear-maker-v1.5.15'; // バージョンを変える時はここを変更
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -32,35 +32,55 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request).then(
-                    (response) => {
-                        // Check if we received a valid response
-                        // Note: CDNs (CORS) might return type 'cors', not 'basic'.
-                        // If you want to cache CDNs dynamically that are NOT in ASSETS_TO_CACHE, 
-                        // you might need to allow 'cors' type as well.
-                        // For now, keeping your original logic is safer for security.
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
+    // Check if the request is for navigation (HTML) or local assets
+    const isNavigation = event.request.mode === 'navigate';
+    const isLocalAsset = event.request.url.startsWith(self.location.origin);
 
-                        var responseToCache = response.clone();
-
-                        caches.open(CACHE_NAME)
-                            .then((cache) => {
-                                cache.put(event.request, responseToCache);
-                            });
-
+    // Network First Strategy for HTML and Local Assets
+    if (isNavigation || isLocalAsset) {
+        event.respondWith(
+            fetch(event.request)
+                .then((response) => {
+                    // Update cache with the new response
+                    if (!response || response.status !== 200 || response.type !== 'basic') {
                         return response;
                     }
-                );
-            })
-    );
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME)
+                        .then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
+                    return response;
+                })
+                .catch(() => {
+                    // Fallback to cache if network fails
+                    return caches.match(event.request);
+                })
+        );
+    } else {
+        // Cache First Strategy for other assets (e.g., CDN libraries)
+        event.respondWith(
+            caches.match(event.request)
+                .then((response) => {
+                    if (response) {
+                        return response;
+                    }
+                    return fetch(event.request).then(
+                        (response) => {
+                            if (!response || response.status !== 200 || response.type !== 'basic') {
+                                return response;
+                            }
+                            const responseToCache = response.clone();
+                            caches.open(CACHE_NAME)
+                                .then((cache) => {
+                                    cache.put(event.request, responseToCache);
+                                });
+                            return response;
+                        }
+                    );
+                })
+        );
+    }
 });
 
 self.addEventListener('activate', (event) => {
