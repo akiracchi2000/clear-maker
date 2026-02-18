@@ -1,4 +1,4 @@
-(function(){var _S=['drop-overlay','settings-modal','open-settings','close-settings','save-settings','api-key','model-select','subject-select','system-prompt','user-prompt','file-status','response-area','loading-indicator','generate-btn','copy-btn','screenshot-btn','theme-toggle','edit-btn','response-editor','edit-actions','save-edit-btn','cancel-edit-btn','paste-modal','close-paste-modal','.paste-option-btn','drop-zone-question','drop-zone-model','drop-zone-student','file-input-question','file-input-model','file-input-student','thumbnails-question','thumbnails-model','thumbnails-student','include-question','include-model','include-student','click','click','click','click','click','other','','dark','','gemini-3-pro-preview',"あなたは数学の教師です。与えられた数式や問題を解析し、解答・解説を行ってください。","あなたは英語の教師です。与えられた英文や問題を解析し、和訳や文法解説を行ってください。","あなたは理科の教師です。与えられた問題を解析し、科学的な根拠に基づいて解説してください。","あなたは社会科の教師です。歴史、地理、公民などの問題を背景知識とともに解説してください。","あなたは国語の教師です。現代文、古文、漢文などの問題を解析し、読解のポイントを解説してください。","あなたは優秀な家庭教師です。与えられた画像を解析し、生徒の質問に答えてください。",'gemini_api_key','','gemini_model','gemini-3-pro-preview','current_subject','other','theme','dark','subject_prompts','data-theme','dark','🌙','☀️','theme','dark','light','dark','API Keyを入力してください','gemini_api_key','gemini_model','subject_prompts','current_subject',"data:text/json;charset=utf-8,",'a',"href","download","clear_maker_prompts.json",'object','subject_prompts','プロンプト設定を復元しました！','Invalid JSON structure','ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。','','question','model','student','dragover','drop','click','paste','click','click','data-target','click','click','click','click','click','export-prompts-btn','click','import-prompts-btn','click','import-prompts-input','import-prompts-input','change','open-readme-btn','click','close-readme-btn','click','readme-modal','hidden','change','input','click','.clear-zone-btn','click','change','dragover','active','dragleave','active','drop','active','mouseenter','mouseleave','click','','hidden','hidden','image','question','model','student','ファイルの読み込みに失敗しました。','✨ 解析を実行','予期せぬエラーが発生しました: ','','hidden','hidden','img','click','少なくとも1つの画像をアップロードしてください','まずは右上の設定ボタン(⚙️)からAPIキーを設定してください。',"\n\n【重要】\n・数式は必ずLaTeX形式（$...$ または $$...$$）で記述してください。\n・行内数式は $...$ で、独立数式は $$...$$ で囲んでください。\n・特に複数行の数式（aligned環境など）を使う場合は、必ず $$ \\begin{aligned} ... \\end{aligned} $$ のように全体を $$ で囲んでください。","\n\n## 問題画像","\n\n## 模範解答画像","\n\n## 生徒の解答画像","HARM_CATEGORY_HARASSMENT","BLOCK_NONE","HARM_CATEGORY_HATE_SPEECH","BLOCK_NONE","HARM_CATEGORY_SEXUALLY_EXPLICIT","BLOCK_NONE","HARM_CATEGORY_DANGEROUS_CONTENT","BLOCK_NONE",'POST','Content-Type','application/json','API Response Unexpected:','AIからの応答が空でした。','STOP','Finish Reason:','テキストが生成されませんでした。','解析完了','MATHPLACEHOLDER','clear_maker_','g','<div class="response-images-container">','</div><hr class="separator">','hidden','hidden','hidden','$$','$$','\\[','\\]','$','$','\\(','\\)','image/',',','application/pdf','対応していないファイル形式です (画像またはPDFのみ)','undefined','PDF解析ライブラリ (pdfjsLib) が読み込まれていません。ページをリロードしてみてください。','canvas','2d','#FFFFFF','image/jpeg','image/jpeg',',','PDF Conversion Error:','PDFの変換中にエラーが発生しました: ','img','hr','✅','Copy failed','コピーに失敗しました','hidden','0.3','hidden','hidden','hidden','1','data-theme','light','#f8fafc','#0f172a','light','#f1f5f9','#1e293b','24px','a','image/png','画像の保存に失敗しました','hidden','hidden','','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','readme-modal','readme-content','<p>読み込み中...</p>','v1.5.5: Loading embedded README...','undefined','Marked library is not loaded','Failed to load README:'];const README_CONTENT = `# Clear Maker
+(function(){var _S=['drop-overlay','settings-modal','open-settings','close-settings','save-settings','api-key','model-select','subject-select','system-prompt','user-prompt','file-status','response-area','loading-indicator','generate-btn','copy-btn','screenshot-btn','theme-toggle','edit-btn','response-editor','edit-actions','save-edit-btn','cancel-edit-btn','paste-modal','close-paste-modal','.paste-option-btn','drop-zone-question','drop-zone-model','drop-zone-student','file-input-question','file-input-model','file-input-student','thumbnails-question','thumbnails-model','thumbnails-student','include-question','include-model','include-student','click','click','click','click','click','other','','dark','','gemini-3-pro-preview',"あなたは数学の教師です。与えられた数式や問題を解析し、解答・解説を行ってください。","あなたは英語の教師です。与えられた英文や問題を解析し、和訳や文法解説を行ってください。","あなたは理科の教師です。与えられた問題を解析し、科学的な根拠に基づいて解説してください。","あなたは社会科の教師です。歴史、地理、公民などの問題を背景知識とともに解説してください。","あなたは国語の教師です。現代文、古文、漢文などの問題を解析し、読解のポイントを解説してください。","あなたは優秀な家庭教師です。与えられた画像を解析し、生徒の質問に答えてください。",'gemini_api_key','','gemini_model','gemini-3-pro-preview','current_subject','other','theme','dark','subject_prompts','include_question','false','include_model','false','include_student','false','data-theme','dark','🌙','☀️','theme','dark','light','dark','API Keyを入力してください','gemini_api_key','gemini_model','subject_prompts','current_subject',"data:text/json;charset=utf-8,",'a',"href","download","clear_maker_prompts.json",'object','subject_prompts','プロンプト設定を復元しました！','Invalid JSON structure','ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。','','question','model','student','dragover','drop','click','paste','click','click','data-target','click','click','click','click','click','export-prompts-btn','click','import-prompts-btn','click','import-prompts-input','import-prompts-input','change','open-readme-btn','click','close-readme-btn','click','readme-modal','hidden','change','input','click','change','include_question','change','include_model','change','include_student','.clear-zone-btn','click','change','dragover','active','dragleave','active','drop','active','mouseenter','mouseleave','click','','hidden','hidden','image','question','model','student','ファイルの読み込みに失敗しました。','✨ 解析を実行','予期せぬエラーが発生しました: ','','hidden','hidden','img','click','少なくとも1つの画像をアップロードしてください','まずは右上の設定ボタン(⚙️)からAPIキーを設定してください。',"\n\n【重要】\n・数式は必ずLaTeX形式（$...$ または $$...$$）で記述してください。\n・行内数式は $...$ で、独立数式は $$...$$ で囲んでください。\n・特に複数行の数式（aligned環境など）を使う場合は、必ず $$ \\begin{aligned} ... \\end{aligned} $$ のように全体を $$ で囲んでください。","\n\n## 問題画像","\n\n## 模範解答画像","\n\n## 生徒の解答画像","HARM_CATEGORY_HARASSMENT","BLOCK_NONE","HARM_CATEGORY_HATE_SPEECH","BLOCK_NONE","HARM_CATEGORY_SEXUALLY_EXPLICIT","BLOCK_NONE","HARM_CATEGORY_DANGEROUS_CONTENT","BLOCK_NONE",'POST','Content-Type','application/json','API Response Unexpected:','AIからの応答が空でした。','STOP','Finish Reason:','テキストが生成されませんでした。','解析完了','MATHPLACEHOLDER','clear_maker_','g','<div class="response-images-container">','</div><hr class="separator">','hidden','hidden','hidden','$$','$$','\\[','\\]','$','$','\\(','\\)','image/',',','application/pdf','対応していないファイル形式です (画像またはPDFのみ)','undefined','PDF解析ライブラリ (pdfjsLib) が読み込まれていません。ページをリロードしてみてください。','canvas','2d','#FFFFFF','image/jpeg','image/jpeg',',','PDF Conversion Error:','PDFの変換中にエラーが発生しました: ','img','hr','✅','Copy failed','コピーに失敗しました','hidden','0.3','hidden','hidden','hidden','1','data-theme','light','#f8fafc','#0f172a','light','#f1f5f9','#1e293b','24px','a','image/png','画像の保存に失敗しました','hidden','hidden','','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','readme-modal','readme-content','<p>読み込み中...</p>','v1.5.5: Loading embedded README...','undefined','Marked library is not loaded','Failed to load README:'];const README_CONTENT = `# Clear Maker
 
 **AIを活用した答案添削・解説作成支援ツール**
 
@@ -169,45 +169,48 @@ _s.prompts = savedPrompts ? JSON.parse(savedPrompts) : { ...DEFAULT_PROMPTS };
 _e.apiKeyInput.value = _s.apiKey;
 _e.modelSelect.value = _s.model;
 _e.subjectSelect.value = _s.currentSubject;
+_e.includeChecks.question.checked = localStorage.getItem(_S[62]) !== _S[63];
+_e.includeChecks.model.checked = localStorage.getItem(_S[64]) !== _S[65];
+_e.includeChecks.student.checked = localStorage.getItem(_S[66]) !== _S[67];
 }
 function _f3(theme) {
-document.body.setAttribute(_S[62], theme);
-_e.themeToggleBtn.textContent = theme === _S[63] ? _S[64] : _S[65];
+document.body.setAttribute(_S[68], theme);
+_e.themeToggleBtn.textContent = theme === _S[69] ? _S[70] : _S[71];
 _s.theme = theme;
-localStorage.setItem(_S[66], theme);
+localStorage.setItem(_S[72], theme);
 }
 function _f4() {
-const newTheme = _s.theme === _S[67] ? _S[68] : _S[69];
+const newTheme = _s.theme === _S[73] ? _S[74] : _S[75];
 _f3(newTheme);
 }
 function _f5() {
 const key = _e.apiKeyInput.value.trim();
 const model = _e.modelSelect.value;
 if (!key) {
-alert(_S[70]);
+alert(_S[76]);
 return;
 }
 _s.apiKey = key;
 _s.model = model;
-localStorage.setItem(_S[71], key);
-localStorage.setItem(_S[72], model);
+localStorage.setItem(_S[77], key);
+localStorage.setItem(_S[78], model);
 _fD(_e.settingsModal, false);
 }
 function _f6() {
 const text = _e.systemPrompt.value;
 _s.prompts[_s.currentSubject] = text;
-localStorage.setItem(_S[73], JSON.stringify(_s.prompts));
+localStorage.setItem(_S[79], JSON.stringify(_s.prompts));
 }
 function _f7(subject) {
 _s.currentSubject = subject;
-localStorage.setItem(_S[74], subject);
+localStorage.setItem(_S[80], subject);
 _e.systemPrompt.value = _s.prompts[subject] || DEFAULT_PROMPTS[subject] || DEFAULT_PROMPTS.other;
 }
 function _f8() {
-const dataStr = _S[75] + encodeURIComponent(JSON.stringify(_s.prompts, null, 2));
-const downloadAnchorNode = document.createElement(_S[76]);
-downloadAnchorNode.setAttribute(_S[77], dataStr);
-downloadAnchorNode.setAttribute(_S[78], _S[79]);
+const dataStr = _S[81] + encodeURIComponent(JSON.stringify(_s.prompts, null, 2));
+const downloadAnchorNode = document.createElement(_S[82]);
+downloadAnchorNode.setAttribute(_S[83], dataStr);
+downloadAnchorNode.setAttribute(_S[84], _S[85]);
 document.body.appendChild(downloadAnchorNode);
 downloadAnchorNode.click();
 downloadAnchorNode.remove();
@@ -219,32 +222,32 @@ const reader = new FileReader();
 reader.onload = function (e) {
 try {
 const contents = JSON.parse(e.target.result);
-if (typeof contents === _S[80] && contents !== null) {
+if (typeof contents === _S[86] && contents !== null) {
 _s.prompts = { ..._s.prompts, ...contents };
-localStorage.setItem(_S[81], JSON.stringify(_s.prompts));
+localStorage.setItem(_S[87], JSON.stringify(_s.prompts));
 _f7(_s.currentSubject);
-alert(_S[82]);
+alert(_S[88]);
 } else {
-throw new Error(_S[83]);
+throw new Error(_S[89]);
 }
 } catch (err) {
 console.error(err);
-alert(_S[84]);
+alert(_S[90]);
 }
 };
 reader.readAsText(file);
-event.target.value = _S[85];
+event.target.value = _S[91];
 }
 function _fA() {
-[_S[86], _S[87], _S[88]].forEach(type => _fB(type));
-window.addEventListener(_S[89], (e) => e.preventDefault());
-window.addEventListener(_S[90], (e) => e.preventDefault());
-_e.generateBtn.addEventListener(_S[91], _fL);
-window.addEventListener(_S[92], _fF);
-_e.closePasteBtn.addEventListener(_S[93], () => _fD(_e.pasteModal, false));
+[_S[92], _S[93], _S[94]].forEach(type => _fB(type));
+window.addEventListener(_S[95], (e) => e.preventDefault());
+window.addEventListener(_S[96], (e) => e.preventDefault());
+_e.generateBtn.addEventListener(_S[97], _fL);
+window.addEventListener(_S[98], _fF);
+_e.closePasteBtn.addEventListener(_S[99], () => _fD(_e.pasteModal, false));
 _e.pasteOptions.forEach(btn => {
-btn.addEventListener(_S[94], () => {
-const target = btn.getAttribute(_S[95]);
+btn.addEventListener(_S[100], () => {
+const target = btn.getAttribute(_S[101]);
 if (_s.pendingPasteFiles.length > 0) {
 _fH(_s.pendingPasteFiles, target);
 _s.pendingPasteFiles = [];
@@ -252,54 +255,57 @@ _s.pendingPasteFiles = [];
 _fD(_e.pasteModal, false);
 });
 });
-_e.copyBtn.addEventListener(_S[96], _fQ);
-_e.screenshotBtn.addEventListener(_S[97], _fS);
-_e.openSettingsBtn.addEventListener(_S[98], () => _fD(_e.settingsModal, true));
-_e.closeSettingsBtn.addEventListener(_S[99], () => _fD(_e.settingsModal, false));
-_e.saveSettingsBtn.addEventListener(_S[100], _f5);
-document.getElementById(_S[101]).addEventListener(_S[102], _f8);
-document.getElementById(_S[103]).addEventListener(_S[104], () => document.getElementById(_S[105]).click());
-document.getElementById(_S[106]).addEventListener(_S[107], _f9);
-document.getElementById(_S[108]).addEventListener(_S[109], _fW);
-document.getElementById(_S[110]).addEventListener(_S[111], () => document.getElementById(_S[112]).classList.add(_S[113]));
-_e.subjectSelect.addEventListener(_S[114], (e) => {
+_e.copyBtn.addEventListener(_S[102], _fQ);
+_e.screenshotBtn.addEventListener(_S[103], _fS);
+_e.openSettingsBtn.addEventListener(_S[104], () => _fD(_e.settingsModal, true));
+_e.closeSettingsBtn.addEventListener(_S[105], () => _fD(_e.settingsModal, false));
+_e.saveSettingsBtn.addEventListener(_S[106], _f5);
+document.getElementById(_S[107]).addEventListener(_S[108], _f8);
+document.getElementById(_S[109]).addEventListener(_S[110], () => document.getElementById(_S[111]).click());
+document.getElementById(_S[112]).addEventListener(_S[113], _f9);
+document.getElementById(_S[114]).addEventListener(_S[115], _fW);
+document.getElementById(_S[116]).addEventListener(_S[117], () => document.getElementById(_S[118]).classList.add(_S[119]));
+_e.subjectSelect.addEventListener(_S[120], (e) => {
 _f6();
 _f7(e.target.value);
 });
-_e.systemPrompt.addEventListener(_S[115], _f6);
-_e.themeToggleBtn.addEventListener(_S[116], _f4);
+_e.systemPrompt.addEventListener(_S[121], _f6);
+_e.themeToggleBtn.addEventListener(_S[122], _f4);
+_e.includeChecks.question.addEventListener(_S[123], (e) => localStorage.setItem(_S[124], e.target.checked));
+_e.includeChecks.model.addEventListener(_S[125], (e) => localStorage.setItem(_S[126], e.target.checked));
+_e.includeChecks.student.addEventListener(_S[127], (e) => localStorage.setItem(_S[128], e.target.checked));
 }
 function _fB(type) {
 const zone = _e.dropZones[type];
 const input = _e.inputs[type];
 const container = document.querySelector(`.drop-zone-group[data-type="${type}"]`);
-const clearBtn = container.querySelector(_S[117]);
+const clearBtn = container.querySelector(_S[129]);
 if (!zone || !input) return;
-zone.addEventListener(_S[118], () => input.click());
-input.addEventListener(_S[119], (e) => _fG(e, type));
-zone.addEventListener(_S[120], (e) => {
+zone.addEventListener(_S[130], () => input.click());
+input.addEventListener(_S[131], (e) => _fG(e, type));
+zone.addEventListener(_S[132], (e) => {
 e.preventDefault();
-container.classList.add(_S[121]);
+container.classList.add(_S[133]);
 });
-zone.addEventListener(_S[122], (e) => {
+zone.addEventListener(_S[134], (e) => {
 e.preventDefault();
-container.classList.remove(_S[123]);
+container.classList.remove(_S[135]);
 });
-zone.addEventListener(_S[124], (e) => {
+zone.addEventListener(_S[136], (e) => {
 e.preventDefault();
-container.classList.remove(_S[125]);
+container.classList.remove(_S[137]);
 _fE(e, type);
 });
-container.addEventListener(_S[126], () => {
+container.addEventListener(_S[138], () => {
 _s.hoveredZone = type;
 });
-container.addEventListener(_S[127], () => {
+container.addEventListener(_S[139], () => {
 if (_s.hoveredZone === type) {
 _s.hoveredZone = null;
 }
 });
 if (clearBtn) {
-clearBtn.addEventListener(_S[128], (e) => {
+clearBtn.addEventListener(_S[140], (e) => {
 e.stopPropagation();
 _fC(type);
 });
@@ -309,11 +315,11 @@ function _fC(type) {
 _s.files[type] = [];
 _fI(type);
 _fK();
-_e.inputs[type].value = _S[129];
+_e.inputs[type].value = _S[141];
 }
 function _fD(modal, show) {
-if (show) modal.classList.remove(_S[130]);
-else modal.classList.add(_S[131]);
+if (show) modal.classList.remove(_S[142]);
+else modal.classList.add(_S[143]);
 }
 async function _fE(e, type) {
 const files = e.dataTransfer.files;
@@ -323,7 +329,7 @@ function _fF(e) {
 const items = e.clipboardData.items;
 const files = [];
 for (let i = 0; i < items.length; i++) {
-if (items[i].type.indexOf(_S[132]) !== -1) {
+if (items[i].type.indexOf(_S[144]) !== -1) {
 const file = items[i].getAsFile();
 if (file) files.push(file);
 }
@@ -349,9 +355,9 @@ if (_s.isGenerationFinished) {
 _s.files.question = [];
 _s.files.model = [];
 _s.files.student = [];
-_fI(_S[133]);
-_fI(_S[134]);
-_fI(_S[135]);
+_fI(_S[145]);
+_fI(_S[146]);
+_fI(_S[147]);
 _s.isGenerationFinished = false;
 }
 if (!type || !_s.files[type]) {
@@ -369,34 +375,34 @@ return null;
 const results = await Promise.all(promises);
 const validResults = results.filter(r => r !== null).flat();
 if (validResults.length === 0 && results.length > 0) {
-alert(_S[136]);
+alert(_S[148]);
 } else {
 _s.files[type] = [..._s.files[type], ...validResults];
 _fI(type);
 }
 _fK();
 _e.generateBtn.disabled = false;
-_e.generateBtn.innerHTML = _S[137];
+_e.generateBtn.innerHTML = _S[149];
 } catch (err) {
 console.error(err);
-alert(_S[138] + err.message);
+alert(_S[150] + err.message);
 _e.generateBtn.disabled = false;
 }
 }
 function _fI(type) {
 const container = _e.thumbs[type];
-container.innerHTML = _S[139];
+container.innerHTML = _S[151];
 const files = _s.files[type];
 if (files.length === 0) {
-container.classList.add(_S[140]);
+container.classList.add(_S[152]);
 return;
 }
-container.classList.remove(_S[141]);
+container.classList.remove(_S[153]);
 files.forEach((imgData, index) => {
-const img = document.createElement(_S[142]);
+const img = document.createElement(_S[154]);
 img.src = `data:${imgData.mimeType};base64,${imgData.data}`;
 img.title = `Click to remove`;
-img.addEventListener(_S[143], (e) => {
+img.addEventListener(_S[155], (e) => {
 e.stopPropagation();
 _fJ(type, index);
 });
@@ -415,11 +421,11 @@ _e.fileStatus.textContent = `画像合計: ${total}枚 (問:${_s.files.question.
 async function _fL() {
 const totalFiles = _s.files.question.length + _s.files.model.length + _s.files.student.length;
 if (totalFiles === 0) {
-alert(_S[144]);
+alert(_S[156]);
 return;
 }
 if (!_s.apiKey) {
-alert(_S[145]);
+alert(_S[157]);
 _fD(_e.settingsModal, true);
 return;
 }
@@ -440,18 +446,18 @@ _e.generateBtn.disabled = false;
 async function _fM() {
 const fixedPrompt = _e.systemPrompt.value;
 const additionalPrompt = _e.userPrompt.value;
-const texInstruction = _S[146];
+const texInstruction = _S[158];
 const parts = [{ text: fixedPrompt + texInstruction }];
 if (_s.files.question.length > 0) {
-parts.push({ text: _S[147] });
+parts.push({ text: _S[159] });
 _s.files.question.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 if (_s.files.model.length > 0) {
-parts.push({ text: _S[148] });
+parts.push({ text: _S[160] });
 _s.files.model.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 if (_s.files.student.length > 0) {
-parts.push({ text: _S[149] });
+parts.push({ text: _S[161] });
 _s.files.student.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 parts.push({ text: `\n\n## 追加プロンプト\n${additionalPrompt || '画像を解析して、その内容について解説してください。'}` });
@@ -465,16 +471,16 @@ generationConfig: {
 temperature: 0.4
 },
 safetySettings: [
-{ category: _S[150], threshold: _S[151] },
-{ category: _S[152], threshold: _S[153] },
-{ category: _S[154], threshold: _S[155] },
-{ category: _S[156], threshold: _S[157] }
+{ category: _S[162], threshold: _S[163] },
+{ category: _S[164], threshold: _S[165] },
+{ category: _S[166], threshold: _S[167] },
+{ category: _S[168], threshold: _S[169] }
 ]
 };
 try {
 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${_s.model}:generateContent?key=${_s.apiKey}`, {
-method: _S[158],
-headers: { [_S[159]]: _S[160] },
+method: _S[170],
+headers: { [_S[171]]: _S[172] },
 body: JSON.stringify(requestBody)
 });
 const data = await response.json();
@@ -482,19 +488,19 @@ if (data.error) {
 throw new Error(data.error.message);
 }
 if (!data.candidates || data.candidates.length === 0) {
-console.error(_S[161], data);
+console.error(_S[173], data);
 if (data.promptFeedback) {
 const blockReason = data.promptFeedback.blockReason;
 throw new Error(`生成がブロックされました (理由: ${blockReason})`);
 }
-throw new Error(_S[162]);
+throw new Error(_S[174]);
 }
 const candidate = data.candidates[0];
-if (candidate.finishReason && candidate.finishReason !== _S[163]) {
-console.warn(_S[164], candidate.finishReason);
+if (candidate.finishReason && candidate.finishReason !== _S[175]) {
+console.warn(_S[176], candidate.finishReason);
 }
 if (!candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
-throw new Error(_S[165]);
+throw new Error(_S[177]);
 }
 const text = candidate.content.parts[0].text;
 const allImages = [];
@@ -505,14 +511,14 @@ _fN(text, allImages);
 } catch (err) {
 throw err;
 } finally {
-_e.fileStatus.textContent = _S[166];
+_e.fileStatus.textContent = _S[178];
 _s.isGenerationFinished = true;
 }
 }
 function _fN(markdown, imageParts = null) {
-const PLACEHOLDER_PREFIX = _S[167];
+const PLACEHOLDER_PREFIX = _S[179];
 const mathBlocks = [];
-const STORAGE_PREFIX = _S[168];
+const STORAGE_PREFIX = _S[180];
 const storeMath = (match) => {
 const placeholder = `${PLACEHOLDER_PREFIX}${mathBlocks.length}`;
 mathBlocks.push(match);
@@ -545,56 +551,56 @@ let html = marked.parse(processedMarkdown, { breaks: true });
 for (let i = mathBlocks.length - 1; i >= 0; i--) {
 const math = mathBlocks[i];
 const placeholder = `${PLACEHOLDER_PREFIX}${i}`;
-const regex = new RegExp(placeholder, _S[169]);
+const regex = new RegExp(placeholder, _S[181]);
 html = html.replace(regex, () => math);
 }
 if (imageParts && Array.isArray(imageParts)) {
-let imgsHtml = _S[170];
+let imgsHtml = _S[182];
 imageParts.forEach(part => {
 const imgSrc = `data:${part.mimeType};base64,${part.data}`;
 imgsHtml += `<img src="${imgSrc}" class="response-preview-image" alt="Uploaded Content">`;
 });
-imgsHtml += _S[171];
+imgsHtml += _S[183];
 html = imgsHtml + html;
 }
 _e.responseArea.innerHTML = html;
-_e.editBtn.classList.remove(_S[172]);
-_e.copyBtn.classList.remove(_S[173]);
-_e.screenshotBtn.classList.remove(_S[174]);
+_e.editBtn.classList.remove(_S[184]);
+_e.copyBtn.classList.remove(_S[185]);
+_e.screenshotBtn.classList.remove(_S[186]);
 _s.currentMarkdown = markdown;
 if (window.renderMathInElement) {
 renderMathInElement(_e.responseArea, {
 delimiters: [
-{ left: _S[175], right: _S[176], display: true },
-{ left: _S[177], right: _S[178], display: true },
-{ left: _S[179], right: _S[180], display: false },
-{ left: _S[181], right: _S[182], display: false }
+{ left: _S[187], right: _S[188], display: true },
+{ left: _S[189], right: _S[190], display: true },
+{ left: _S[191], right: _S[192], display: false },
+{ left: _S[193], right: _S[194], display: false }
 ],
 throwOnError: false
 });
 }
 }
 async function _fO(file) {
-if (file.type.startsWith(_S[183])) {
+if (file.type.startsWith(_S[195])) {
 return new Promise((resolve, reject) => {
 const reader = new FileReader();
 reader.onload = (e) => {
-const base64 = e.target.result.split(_S[184])[1];
+const base64 = e.target.result.split(_S[196])[1];
 resolve([{ mimeType: file.type, data: base64 }]);
 };
 reader.onerror = reject;
 reader.readAsDataURL(file);
 });
-} else if (file.type === _S[185]) {
+} else if (file.type === _S[197]) {
 const arrayBuffer = await file.arrayBuffer();
 return await _fP(arrayBuffer);
 } else {
-throw new Error(_S[186]);
+throw new Error(_S[198]);
 }
 }
 async function _fP(arrayBuffer) {
-if (typeof pdfjsLib === _S[187]) {
-throw new Error(_S[188]);
+if (typeof pdfjsLib === _S[199]) {
+throw new Error(_S[200]);
 }
 try {
 const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
@@ -609,71 +615,71 @@ console.warn(`PDF has ${maxPages} pages. Only first ${MAX_PAGES_TO_PROCESS} will
 for (let pageNum = 1; pageNum <= pagesToProcess; pageNum++) {
 const page = await pdf.getPage(pageNum);
 const viewport = page.getViewport({ scale: 2.0 });
-const canvas = document.createElement(_S[189]);
-const context = canvas.getContext(_S[190]);
+const canvas = document.createElement(_S[201]);
+const context = canvas.getContext(_S[202]);
 canvas.height = viewport.height;
 canvas.width = viewport.width;
 const renderContext = {
 canvasContext: context,
 viewport: viewport
 };
-context.fillStyle = _S[191];
+context.fillStyle = _S[203];
 context.fillRect(0, 0, canvas.width, canvas.height);
 await page.render(renderContext).promise;
-const dataUrl = canvas.toDataURL(_S[192], 0.95);
+const dataUrl = canvas.toDataURL(_S[204], 0.95);
 images.push({
-mimeType: _S[193],
-data: dataUrl.split(_S[194])[1]
+mimeType: _S[205],
+data: dataUrl.split(_S[206])[1]
 });
 }
 return images;
 } catch (err) {
-console.error(_S[195], err);
-throw new Error(_S[196] + err.message);
+console.error(_S[207], err);
+throw new Error(_S[208] + err.message);
 }
 }
 function _fQ() {
 const clone = _e.responseArea.cloneNode(true);
-const images = clone.getElementsByTagName(_S[197]);
+const images = clone.getElementsByTagName(_S[209]);
 while (images.length > 0) {
 images[0].remove();
 }
-const hr = clone.getElementsByTagName(_S[198]);
+const hr = clone.getElementsByTagName(_S[210]);
 while (hr.length > 0) {
 hr[0].remove();
 }
 const text = clone.innerText.trim();
 navigator.clipboard.writeText(text).then(() => {
 const originalText = _e.copyBtn.textContent;
-_e.copyBtn.textContent = _S[199];
+_e.copyBtn.textContent = _S[211];
 setTimeout(() => {
 _e.copyBtn.textContent = originalText;
 }, 2000);
 }).catch(err => {
-console.error(_S[200], err);
-alert(_S[201]);
+console.error(_S[212], err);
+alert(_S[213]);
 });
 }
 function _fR(isLoading) {
 if (isLoading) {
-_e.loadingIndicator.classList.remove(_S[202]);
-_e.responseArea.style.opacity = _S[203];
-_e.copyBtn.classList.add(_S[204]);
-_e.screenshotBtn.classList.add(_S[205]);
+_e.loadingIndicator.classList.remove(_S[214]);
+_e.responseArea.style.opacity = _S[215];
+_e.copyBtn.classList.add(_S[216]);
+_e.screenshotBtn.classList.add(_S[217]);
 } else {
-_e.loadingIndicator.classList.add(_S[206]);
-_e.responseArea.style.opacity = _S[207];
+_e.loadingIndicator.classList.add(_S[218]);
+_e.responseArea.style.opacity = _S[219];
 }
 }
 function _fS() {
 const target = _e.responseArea;
 const originalBg = target.style.background;
-const dataTheme = document.body.getAttribute(_S[208]);
-const bgHex = dataTheme === _S[209] ? _S[210] : _S[211];
-const captureBg = dataTheme === _S[212] ? _S[213] : _S[214];
+const dataTheme = document.body.getAttribute(_S[220]);
+const bgHex = dataTheme === _S[221] ? _S[222] : _S[223];
+const captureBg = dataTheme === _S[224] ? _S[225] : _S[226];
 target.style.background = bgHex;
 const originalPadding = target.style.padding;
-target.style.padding = _S[215];
+target.style.padding = _S[227];
 html2canvas(target, {
 useCORS: true,
 scale: 2,
@@ -682,33 +688,33 @@ logging: false
 }).then(canvas => {
 target.style.background = originalBg;
 target.style.padding = originalPadding;
-const link = document.createElement(_S[216]);
+const link = document.createElement(_S[228]);
 link.download = `clear_maker_response_${Date.now()}.png`;
-link.href = canvas.toDataURL(_S[217]);
+link.href = canvas.toDataURL(_S[229]);
 link.click();
 }).catch(err => {
 console.error(err);
 target.style.background = originalBg;
 target.style.padding = originalPadding;
-alert(_S[218]);
+alert(_S[230]);
 });
 }
 function _fT(isEditing) {
 if (isEditing) {
-_e.responseArea.classList.add(_S[219]);
-_e.responseEditor.classList.remove(_S[220]);
-_e.responseEditor.value = _s.currentMarkdown || _S[221];
-_e.editBtn.classList.add(_S[222]);
-_e.copyBtn.classList.add(_S[223]);
-_e.screenshotBtn.classList.add(_S[224]);
-_e.editActions.classList.remove(_S[225]);
+_e.responseArea.classList.add(_S[231]);
+_e.responseEditor.classList.remove(_S[232]);
+_e.responseEditor.value = _s.currentMarkdown || _S[233];
+_e.editBtn.classList.add(_S[234]);
+_e.copyBtn.classList.add(_S[235]);
+_e.screenshotBtn.classList.add(_S[236]);
+_e.editActions.classList.remove(_S[237]);
 } else {
-_e.responseArea.classList.remove(_S[226]);
-_e.responseEditor.classList.add(_S[227]);
-_e.editBtn.classList.remove(_S[228]);
-_e.copyBtn.classList.remove(_S[229]);
-_e.screenshotBtn.classList.remove(_S[230]);
-_e.editActions.classList.add(_S[231]);
+_e.responseArea.classList.remove(_S[238]);
+_e.responseEditor.classList.add(_S[239]);
+_e.editBtn.classList.remove(_S[240]);
+_e.copyBtn.classList.remove(_S[241]);
+_e.screenshotBtn.classList.remove(_S[242]);
+_e.editActions.classList.add(_S[243]);
 }
 }
 function _fU() {
@@ -722,21 +728,21 @@ function _fV() {
 _fT(false);
 }
 async function _fW() {
-const modal = document.getElementById(_S[232]);
-const content = document.getElementById(_S[233]);
+const modal = document.getElementById(_S[244]);
+const content = document.getElementById(_S[245]);
 _fD(_e.settingsModal, false);
 _fD(modal, true);
-content.innerHTML = _S[234];
+content.innerHTML = _S[246];
 try {
-console.log(_S[235]);
+console.log(_S[247]);
 const text = README_CONTENT;
-if (typeof marked === _S[236]) {
-throw new Error(_S[237]);
+if (typeof marked === _S[248]) {
+throw new Error(_S[249]);
 }
 const html = marked.parse(text);
 content.innerHTML = html;
 } catch (err) {
-console.error(_S[238], err);
+console.error(_S[250], err);
 content.innerHTML = `<p style="color:red">読み込みに失敗しました。<br>${err.message}</p>`;
 }
 }
