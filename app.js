@@ -17,7 +17,16 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 
 ## 更新履歴 (Changelog)
 
-### v1.5.15 (2026-02-23)
+### v1.5.18 (2026-02-19)
+*   **[ドキュメント] 利用モデルに関する注意書きの追加**:
+    *   Gemini無料版ユーザー向けに、利用推奨モデル (gemini-3-flash-preview, gemini-2.5-flash) を明記しました。
+
+### v1.5.17 (2026-02-23)
+*   **[修正] 画像表示の改善**:
+    *   結果に引用される画像が歪んで表示される（縦横比が崩れる）問題を修正。
+    *   編集モードで保存した際に、引用設定（チェックボックス）が無視される問題を修正。
+
+### v1.5.16 (2026-02-23)
 *   **[修正] キャッシュ更新の問題**:
     *   アプリが新しいバージョンに更新されない問題を修正。
     *   主要なファイル（HTML, JS, CSS）の取得戦略を「ネットワーク優先」に変更し、常に最新版を確認するようにしました。
@@ -58,6 +67,8 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 ## APIキーの取得方法
 
 このアプリを使用するには、Google Gemini APIキーが必要です。以下の手順で無料で取得できます。
+
+**※ gemini無料版ユーザーは利用するモデルを gemini-3-flash-preview, gemini-2.5-flash のいずれかに変更してご利用ください。**
 
 1.  [Google AI Studio](https://aistudio.google.com/app/apikey) にアクセスします。
 2.  Googleアカウントでログインします。
@@ -720,8 +731,11 @@ _e.editActions.classList.add(_S[243]);
 function _fU() {
 const newMarkdown = _e.responseEditor.value;
 _s.currentMarkdown = newMarkdown;
-const totalFiles = [..._s.files.question, ..._s.files.model, ..._s.files.student];
-_fN(newMarkdown, totalFiles);
+const allImages = [];
+if (_e.includeChecks.question.checked) allImages.push(..._s.files.question);
+if (_e.includeChecks.model.checked) allImages.push(..._s.files.model);
+if (_e.includeChecks.student.checked) allImages.push(..._s.files.student);
+_fN(newMarkdown, allImages);
 _fT(false);
 }
 function _fV() {
