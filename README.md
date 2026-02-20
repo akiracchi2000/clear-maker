@@ -17,6 +17,10 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 
 ## 更新履歴 (Changelog)
 
+### v1.5.19 (2026-02-20)
+*   **[追加] APIモデルの更新**:
+    *   選択可能なGeminiモデルに `gemini-3.1-pro-preview` を追加し、デフォルトモデルとして設定しました。
+
 ### v1.5.18 (2026-02-19)
 *   **[ドキュメント] 利用モデルに関する注意書きの追加**:
     *   Gemini無料版ユーザー向けに、利用推奨モデル (gemini-3-flash-preview, gemini-2.5-flash) を明記しました。
