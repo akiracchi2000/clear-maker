@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clear-maker-cache-v1.6.0';
+const CACHE_NAME = 'clear-maker-cache-v1.6.1';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -54,14 +54,15 @@ self.addEventListener('fetch', (event) => {
                 })
                 .catch(() => {
                     // Fallback to cache if network fails
-                    return caches.match(event.request);
+                    return caches.match(event.request, { ignoreSearch: true });
                 })
         );
     } else {
         // Cache First Strategy for other assets (e.g., CDN libraries)
         event.respondWith(
-            caches.match(event.request)
+            caches.match(event.request, { ignoreSearch: true })
                 .then((response) => {
+
                     if (response) {
                         return response;
                     }
