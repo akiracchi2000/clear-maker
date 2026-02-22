@@ -18,8 +18,6 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 
 ## 更新履歴 (Changelog)
 
-## 更新履歴 (Changelog)
-
 ### v1.6.0 (2026-02-22)
 *   **[システム] データ自動収集機能の追加**:
     *   管理者が指定したURLに利用結果を自動送信する機能（環境設定）をソースコード統合。
@@ -564,7 +562,7 @@ aiResponse: markdown
 await fetch(ADMIN_GAS_WEBHOOK_URL, {
 method: _S[182],
 headers: {
-_S[183]: _S[184],
+[_S[183]]: _S[184],
 },
 body: JSON.stringify(payload)
 });
