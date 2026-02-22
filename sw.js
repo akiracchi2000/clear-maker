@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clear-maker-v1.5.20'; // バージョンを変える時はここを変更
+const CACHE_NAME = 'clear-maker-cache-v1.6.0';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',

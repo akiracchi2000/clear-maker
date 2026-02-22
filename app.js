@@ -1,4 +1,5 @@
-(function(){var _S=['drop-overlay','settings-modal','open-settings','close-settings','save-settings','api-key','model-select','subject-select','system-prompt','user-prompt','file-status','response-area','loading-indicator','generate-btn','copy-btn','screenshot-btn','theme-toggle','edit-btn','response-editor','edit-actions','save-edit-btn','cancel-edit-btn','paste-modal','close-paste-modal','.paste-option-btn','drop-zone-question','drop-zone-model','drop-zone-student','file-input-question','file-input-model','file-input-student','thumbnails-question','thumbnails-model','thumbnails-student','include-question','include-model','include-student','click','click','click','click','click','other','','dark','','gemini-3.1-pro-preview',"あなたは数学の教師です。与えられた数式や問題を解析し、解答・解説を行ってください。","あなたは英語の教師です。与えられた英文や問題を解析し、和訳や文法解説を行ってください。","あなたは理科の教師です。与えられた問題を解析し、科学的な根拠に基づいて解説してください。","あなたは社会科の教師です。歴史、地理、公民などの問題を背景知識とともに解説してください。","あなたは国語の教師です。現代文、古文、漢文などの問題を解析し、読解のポイントを解説してください。","あなたは優秀な家庭教師です。与えられた画像を解析し、生徒の質問に答えてください。",'gemini_api_key','','gemini_model','gemini-3.1-pro-preview','current_subject','other','theme','dark','subject_prompts','include_question','false','include_model','false','include_student','false','data-theme','dark','🌙','☀️','theme','dark','light','dark','API Keyを入力してください','gemini_api_key','gemini_model','subject_prompts','current_subject','application/json','a',"href","download","clear_maker_prompts.json",'object','subject_prompts','プロンプト設定を復元しました！','Invalid JSON structure','ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。','','question','model','student','dragover','drop','click','paste','click','click','data-target','click','click','click','click','click','export-prompts-btn','click','import-prompts-btn','click','import-prompts-input','import-prompts-input','change','open-readme-btn','click','close-readme-btn','click','readme-modal','hidden','change','input','click','change','include_question','change','include_model','change','include_student','.clear-zone-btn','click','change','dragover','active','dragleave','active','drop','active','mouseenter','mouseleave','click','','hidden','hidden','image','question','model','student','ファイルの読み込みに失敗しました。','✨ 解析を実行','予期せぬエラーが発生しました: ','','hidden','hidden','img','click','少なくとも1つの画像をアップロードしてください','まずは右上の設定ボタン(⚙️)からAPIキーを設定してください。',"\n\n【重要】\n・数式は必ずLaTeX形式（$...$ または $$...$$）で記述してください。\n・行内数式は $...$ で、独立数式は $$...$$ で囲んでください。\n・特に複数行の数式（aligned環境など）を使う場合は、必ず $$ \\begin{aligned} ... \\end{aligned} $$ のように全体を $$ で囲んでください。","\n\n## 問題画像","\n\n## 模範解答画像","\n\n## 生徒の解答画像","HARM_CATEGORY_HARASSMENT","BLOCK_NONE","HARM_CATEGORY_HATE_SPEECH","BLOCK_NONE","HARM_CATEGORY_SEXUALLY_EXPLICIT","BLOCK_NONE","HARM_CATEGORY_DANGEROUS_CONTENT","BLOCK_NONE",'POST','Content-Type','application/json','API Response Unexpected:','AIからの応答が空でした。','STOP','Finish Reason:','テキストが生成されませんでした。','解析完了','MATHPLACEHOLDER','clear_maker_','g','<div class="response-images-container">','</div><hr class="separator">','hidden','hidden','hidden','$$','$$','\\[','\\]','$','$','\\(','\\)','image/',',','application/pdf','対応していないファイル形式です (画像またはPDFのみ)','undefined','PDF解析ライブラリ (pdfjsLib) が読み込まれていません。ページをリロードしてみてください。','canvas','2d','#FFFFFF','image/jpeg','image/jpeg',',','PDF Conversion Error:','PDFの変換中にエラーが発生しました: ','img','hr','✅','Copy failed','コピーに失敗しました','hidden','0.3','hidden','hidden','hidden','1','data-theme','light','#f8fafc','#0f172a','light','#f1f5f9','#1e293b','24px','a','image/png','画像の保存に失敗しました','hidden','hidden','','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','readme-modal','readme-content','<p>読み込み中...</p>','v1.5.5: Loading embedded README...','undefined','Marked library is not loaded','Failed to load README:'];const README_CONTENT = `# Clear Maker
+(function(){var _S=['','drop-overlay','settings-modal','open-settings','close-settings','save-settings','api-key','model-select','subject-select','system-prompt','user-prompt','file-status','response-area','loading-indicator','generate-btn','copy-btn','screenshot-btn','theme-toggle','edit-btn','response-editor','edit-actions','save-edit-btn','cancel-edit-btn','paste-modal','close-paste-modal','.paste-option-btn','drop-zone-question','drop-zone-model','drop-zone-student','file-input-question','file-input-model','file-input-student','thumbnails-question','thumbnails-model','thumbnails-student','include-question','include-model','include-student','.version-tag','click','click','click','click','click','other','','dark','','gemini-3.1-pro-preview',"あなたは数学の教師です。与えられた数式や問題を解析し、解答・解説を行ってください。","あなたは英語の教師です。与えられた英文や問題を解析し、和訳や文法解説を行ってください。","あなたは理科の教師です。与えられた問題を解析し、科学的な根拠に基づいて解説してください。","あなたは社会科の教師です。歴史、地理、公民などの問題を背景知識とともに解説してください。","あなたは国語の教師です。現代文、古文、漢文などの問題を解析し、読解のポイントを解説してください。","あなたは優秀な家庭教師です。与えられた画像を解析し、生徒の質問に答えてください。",'v1.6.0','gemini_api_key','','gemini_model','gemini-3.1-pro-preview','current_subject','other','theme','dark','subject_prompts','include_question','false','include_model','false','include_student','false','data-theme','dark','🌙','☀️','theme','dark','light','dark','API Keyを入力してください','gemini_api_key','gemini_model','subject_prompts','current_subject','application/json','a',"href","download","clear_maker_prompts.json",'object','subject_prompts','プロンプト設定を復元しました！','Invalid JSON structure','ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。','','question','model','student','dragover','drop','click','paste','click','click','data-target','click','click','click','click','click','export-prompts-btn','click','import-prompts-btn','click','import-prompts-input','import-prompts-input','change','open-readme-btn','click','close-readme-btn','click','readme-modal','hidden','change','input','click','change','include_question','change','include_model','change','include_student','.clear-zone-btn','click','change','dragover','active','dragleave','active','drop','active','mouseenter','mouseleave','click','','hidden','hidden','image','question','model','student','ファイルの読み込みに失敗しました。','✨ 解析を実行','予期せぬエラーが発生しました: ','','hidden','hidden','img','click','少なくとも1つの画像をアップロードしてください','まずは右上の設定ボタン(⚙️)からAPIキーを設定してください。',"\n\n【重要】\n・数式は必ずLaTeX形式（$...$ または $$...$$）で記述してください。\n・行内数式は $...$ で、独立数式は $$...$$ で囲んでください。\n・特に複数行の数式（aligned環境など）を使う場合は、必ず $$ \\begin{aligned} ... \\end{aligned} $$ のように全体を $$ で囲んでください。","\n\n## 問題画像","\n\n## 模範解答画像","\n\n## 生徒の解答画像","HARM_CATEGORY_HARASSMENT","BLOCK_NONE","HARM_CATEGORY_HATE_SPEECH","BLOCK_NONE","HARM_CATEGORY_SEXUALLY_EXPLICIT","BLOCK_NONE","HARM_CATEGORY_DANGEROUS_CONTENT","BLOCK_NONE",'POST','Content-Type','application/json','API Response Unexpected:','AIからの応答が空でした。','STOP','Finish Reason:','テキストが生成されませんでした。','解析完了','POST','Content-Type','text/plain;charset=utf-8','GASへデータを送信しました','GAS送信エラー:','MATHPLACEHOLDER','clear_maker_','g','<div class="response-images-container">','</div><hr class="separator">','hidden','hidden','hidden','$$','$$','\\[','\\]','$','$','\\(','\\)','image/',',','application/pdf','対応していないファイル形式です (画像またはPDFのみ)','undefined','PDF解析ライブラリ (pdfjsLib) が読み込まれていません。ページをリロードしてみてください。','canvas','2d','#FFFFFF','image/jpeg','image/jpeg',',','PDF Conversion Error:','PDFの変換中にエラーが発生しました: ','img','hr','✅','Copy failed','コピーに失敗しました','hidden','0.3','hidden','hidden','hidden','1','data-theme','light','#f8fafc','#0f172a','light','#f1f5f9','#1e293b','24px','a','image/png','画像の保存に失敗しました','hidden','hidden','','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','hidden','readme-modal','readme-content','<p>読み込み中...</p>','v1.5.5: Loading embedded README...','undefined','Marked library is not loaded','Failed to load README:'];const ADMIN_GAS_WEBHOOK_URL = _S[0];
+const README_CONTENT = `# Clear Maker
 
 **AIを活用した答案添削・解説作成支援ツール**
 
@@ -16,6 +17,12 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 *   **プライバシー重視**: APIキーはローカルストレージに保存され、サーバーには送信されません。
 
 ## 更新履歴 (Changelog)
+
+## 更新履歴 (Changelog)
+
+### v1.6.0 (2026-02-22)
+*   **[システム] データ自動収集機能の追加**:
+    *   管理者が指定したURLに利用結果を自動送信する機能（環境設定）をソースコード統合。
 
 ### v1.5.20 (2026-02-20)
 *   **[修正] プロンプトエクスポート機能の修正**:
@@ -95,68 +102,70 @@ Clear Makerは、Google Gemini Proモデルを活用して、生徒の答案、�
 
 *   **\`app.src.js\`**: 開発用のソースコード（未圧縮・未難読化）。編集はこちらを行ってください。
 *   **\`app.js\`**: 本番用の実行コード（難読化済み）。\`app.src.js\`から生成されます。
+*   **\`gas_template.gs\`**: GAS連携用のスクリプトです。
 `;
 const _e = {
-dropOverlay: document.getElementById(_S[0]),
-settingsModal: document.getElementById(_S[1]),
-openSettingsBtn: document.getElementById(_S[2]),
-closeSettingsBtn: document.getElementById(_S[3]),
-saveSettingsBtn: document.getElementById(_S[4]),
-apiKeyInput: document.getElementById(_S[5]),
-modelSelect: document.getElementById(_S[6]),
-subjectSelect: document.getElementById(_S[7]),
-systemPrompt: document.getElementById(_S[8]),
-userPrompt: document.getElementById(_S[9]),
-fileStatus: document.getElementById(_S[10]),
-responseArea: document.getElementById(_S[11]),
-loadingIndicator: document.getElementById(_S[12]),
-generateBtn: document.getElementById(_S[13]),
-copyBtn: document.getElementById(_S[14]),
-screenshotBtn: document.getElementById(_S[15]),
-themeToggleBtn: document.getElementById(_S[16]),
-editBtn: document.getElementById(_S[17]),
-responseEditor: document.getElementById(_S[18]),
-editActions: document.getElementById(_S[19]),
-saveEditBtn: document.getElementById(_S[20]),
-cancelEditBtn: document.getElementById(_S[21]),
-pasteModal: document.getElementById(_S[22]),
-closePasteBtn: document.getElementById(_S[23]),
-pasteOptions: document.querySelectorAll(_S[24]),
+dropOverlay: document.getElementById(_S[1]),
+settingsModal: document.getElementById(_S[2]),
+openSettingsBtn: document.getElementById(_S[3]),
+closeSettingsBtn: document.getElementById(_S[4]),
+saveSettingsBtn: document.getElementById(_S[5]),
+apiKeyInput: document.getElementById(_S[6]),
+modelSelect: document.getElementById(_S[7]),
+subjectSelect: document.getElementById(_S[8]),
+systemPrompt: document.getElementById(_S[9]),
+userPrompt: document.getElementById(_S[10]),
+fileStatus: document.getElementById(_S[11]),
+responseArea: document.getElementById(_S[12]),
+loadingIndicator: document.getElementById(_S[13]),
+generateBtn: document.getElementById(_S[14]),
+copyBtn: document.getElementById(_S[15]),
+screenshotBtn: document.getElementById(_S[16]),
+themeToggleBtn: document.getElementById(_S[17]),
+editBtn: document.getElementById(_S[18]),
+responseEditor: document.getElementById(_S[19]),
+editActions: document.getElementById(_S[20]),
+saveEditBtn: document.getElementById(_S[21]),
+cancelEditBtn: document.getElementById(_S[22]),
+pasteModal: document.getElementById(_S[23]),
+closePasteBtn: document.getElementById(_S[24]),
+pasteOptions: document.querySelectorAll(_S[25]),
 dropZones: {
-question: document.getElementById(_S[25]),
-model: document.getElementById(_S[26]),
-student: document.getElementById(_S[27])
+question: document.getElementById(_S[26]),
+model: document.getElementById(_S[27]),
+student: document.getElementById(_S[28])
 },
 inputs: {
-question: document.getElementById(_S[28]),
-model: document.getElementById(_S[29]),
-student: document.getElementById(_S[30])
+question: document.getElementById(_S[29]),
+model: document.getElementById(_S[30]),
+student: document.getElementById(_S[31])
 },
 thumbs: {
-question: document.getElementById(_S[31]),
-model: document.getElementById(_S[32]),
-student: document.getElementById(_S[33])
+question: document.getElementById(_S[32]),
+model: document.getElementById(_S[33]),
+student: document.getElementById(_S[34])
 },
 includeChecks: {
-question: document.getElementById(_S[34]),
-model: document.getElementById(_S[35]),
-student: document.getElementById(_S[36])
-}
+question: document.getElementById(_S[35]),
+model: document.getElementById(_S[36]),
+student: document.getElementById(_S[37])
+},
+versionTag: document.querySelector(_S[38])
 };
-_e.copyBtn.addEventListener(_S[37], _fQ);
-_e.screenshotBtn.addEventListener(_S[38], _fS);
-_e.editBtn.addEventListener(_S[39], () => _fT(true));
-_e.saveEditBtn.addEventListener(_S[40], _fU);
-_e.cancelEditBtn.addEventListener(_S[41], _fV);
+_e.copyBtn.addEventListener(_S[39], _fQ);
+_e.screenshotBtn.addEventListener(_S[40], _fS);
+_e.editBtn.addEventListener(_S[41], () => _fT(true));
+_e.saveEditBtn.addEventListener(_S[42], _fU);
+_e.cancelEditBtn.addEventListener(_S[43], _fV);
 let _s = {
-currentSubject: _S[42],
-currentMarkdown: _S[43],
+currentSubject: _S[44],
+currentMarkdown: _S[45],
 hoveredZone: null,
 pendingPasteFiles: [],
-theme: _S[44],
+theme: _S[46],
 prompts: {},
-apiKey: _S[45],
-model: _S[46],
+apiKey: _S[47],
+model: _S[48],
 files: {
 question: [],
 model: [],
@@ -165,73 +174,76 @@ student: []
 isGenerationFinished: false
 };
 const DEFAULT_PROMPTS = {
-math: _S[47],
-english: _S[48],
-science: _S[49],
-social: _S[50],
-japanese: _S[51],
-other: _S[52]
+math: _S[49],
+english: _S[50],
+science: _S[51],
+social: _S[52],
+japanese: _S[53],
+other: _S[54]
 };
 function _f1() {
 _f2();
 _fA();
 _f7(_s.currentSubject);
+if (_e.versionTag) {
+_e.versionTag.textContent = _S[55];
+}
 }
 function _f2() {
-_s.apiKey = localStorage.getItem(_S[53]) || _S[54];
-_s.model = localStorage.getItem(_S[55]) || _S[56];
-_s.currentSubject = localStorage.getItem(_S[57]) || _S[58];
-_s.theme = localStorage.getItem(_S[59]) || _S[60];
+_s.apiKey = localStorage.getItem(_S[56]) || _S[57];
+_s.model = localStorage.getItem(_S[58]) || _S[59];
+_s.currentSubject = localStorage.getItem(_S[60]) || _S[61];
+_s.theme = localStorage.getItem(_S[62]) || _S[63];
 _f3(_s.theme);
-const savedPrompts = localStorage.getItem(_S[61]);
+const savedPrompts = localStorage.getItem(_S[64]);
 _s.prompts = savedPrompts ? JSON.parse(savedPrompts) : { ...DEFAULT_PROMPTS };
 _e.apiKeyInput.value = _s.apiKey;
 _e.modelSelect.value = _s.model;
 _e.subjectSelect.value = _s.currentSubject;
-_e.includeChecks.question.checked = localStorage.getItem(_S[62]) !== _S[63];
-_e.includeChecks.model.checked = localStorage.getItem(_S[64]) !== _S[65];
-_e.includeChecks.student.checked = localStorage.getItem(_S[66]) !== _S[67];
+_e.includeChecks.question.checked = localStorage.getItem(_S[65]) !== _S[66];
+_e.includeChecks.model.checked = localStorage.getItem(_S[67]) !== _S[68];
+_e.includeChecks.student.checked = localStorage.getItem(_S[69]) !== _S[70];
 }
 function _f3(theme) {
-document.body.setAttribute(_S[68], theme);
-_e.themeToggleBtn.textContent = theme === _S[69] ? _S[70] : _S[71];
+document.body.setAttribute(_S[71], theme);
+_e.themeToggleBtn.textContent = theme === _S[72] ? _S[73] : _S[74];
 _s.theme = theme;
-localStorage.setItem(_S[72], theme);
+localStorage.setItem(_S[75], theme);
 }
 function _f4() {
-const newTheme = _s.theme === _S[73] ? _S[74] : _S[75];
+const newTheme = _s.theme === _S[76] ? _S[77] : _S[78];
 _f3(newTheme);
 }
 function _f5() {
 const key = _e.apiKeyInput.value.trim();
 const model = _e.modelSelect.value;
 if (!key) {
-alert(_S[76]);
+alert(_S[79]);
 return;
 }
 _s.apiKey = key;
 _s.model = model;
-localStorage.setItem(_S[77], key);
-localStorage.setItem(_S[78], model);
+localStorage.setItem(_S[80], key);
+localStorage.setItem(_S[81], model);
 _fD(_e.settingsModal, false);
 }
 function _f6() {
 const text = _e.systemPrompt.value;
 _s.prompts[_s.currentSubject] = text;
-localStorage.setItem(_S[79], JSON.stringify(_s.prompts));
+localStorage.setItem(_S[82], JSON.stringify(_s.prompts));
 }
 function _f7(subject) {
 _s.currentSubject = subject;
-localStorage.setItem(_S[80], subject);
+localStorage.setItem(_S[83], subject);
 _e.systemPrompt.value = _s.prompts[subject] || DEFAULT_PROMPTS[subject] || DEFAULT_PROMPTS.other;
 }
 function _f8() {
 const jsonStr = JSON.stringify(_s.prompts, null, 2);
-const blob = new Blob([jsonStr], { type: _S[81] });
+const blob = new Blob([jsonStr], { type: _S[84] });
 const url = URL.createObjectURL(blob);
-const downloadAnchorNode = document.createElement(_S[82]);
-downloadAnchorNode.setAttribute(_S[83], url);
-downloadAnchorNode.setAttribute(_S[84], _S[85]);
+const downloadAnchorNode = document.createElement(_S[85]);
+downloadAnchorNode.setAttribute(_S[86], url);
+downloadAnchorNode.setAttribute(_S[87], _S[88]);
 document.body.appendChild(downloadAnchorNode);
 downloadAnchorNode.click();
 downloadAnchorNode.remove();
@@ -244,32 +256,32 @@ const reader = new FileReader();
 reader.onload = function (e) {
 try {
 const contents = JSON.parse(e.target.result);
-if (typeof contents === _S[86] && contents !== null) {
+if (typeof contents === _S[89] && contents !== null) {
 _s.prompts = { ..._s.prompts, ...contents };
-localStorage.setItem(_S[87], JSON.stringify(_s.prompts));
+localStorage.setItem(_S[90], JSON.stringify(_s.prompts));
 _f7(_s.currentSubject);
-alert(_S[88]);
+alert(_S[91]);
 } else {
-throw new Error(_S[89]);
+throw new Error(_S[92]);
 }
 } catch (err) {
 console.error(err);
-alert(_S[90]);
+alert(_S[93]);
 }
 };
 reader.readAsText(file);
-event.target.value = _S[91];
+event.target.value = _S[94];
 }
 function _fA() {
-[_S[92], _S[93], _S[94]].forEach(type => _fB(type));
-window.addEventListener(_S[95], (e) => e.preventDefault());
-window.addEventListener(_S[96], (e) => e.preventDefault());
-_e.generateBtn.addEventListener(_S[97], _fL);
-window.addEventListener(_S[98], _fF);
-_e.closePasteBtn.addEventListener(_S[99], () => _fD(_e.pasteModal, false));
+[_S[95], _S[96], _S[97]].forEach(type => _fB(type));
+window.addEventListener(_S[98], (e) => e.preventDefault());
+window.addEventListener(_S[99], (e) => e.preventDefault());
+_e.generateBtn.addEventListener(_S[100], _fL);
+window.addEventListener(_S[101], _fF);
+_e.closePasteBtn.addEventListener(_S[102], () => _fD(_e.pasteModal, false));
 _e.pasteOptions.forEach(btn => {
-btn.addEventListener(_S[100], () => {
-const target = btn.getAttribute(_S[101]);
+btn.addEventListener(_S[103], () => {
+const target = btn.getAttribute(_S[104]);
 if (_s.pendingPasteFiles.length > 0) {
 _fH(_s.pendingPasteFiles, target);
 _s.pendingPasteFiles = [];
@@ -277,57 +289,57 @@ _s.pendingPasteFiles = [];
 _fD(_e.pasteModal, false);
 });
 });
-_e.copyBtn.addEventListener(_S[102], _fQ);
-_e.screenshotBtn.addEventListener(_S[103], _fS);
-_e.openSettingsBtn.addEventListener(_S[104], () => _fD(_e.settingsModal, true));
-_e.closeSettingsBtn.addEventListener(_S[105], () => _fD(_e.settingsModal, false));
-_e.saveSettingsBtn.addEventListener(_S[106], _f5);
-document.getElementById(_S[107]).addEventListener(_S[108], _f8);
-document.getElementById(_S[109]).addEventListener(_S[110], () => document.getElementById(_S[111]).click());
-document.getElementById(_S[112]).addEventListener(_S[113], _f9);
-document.getElementById(_S[114]).addEventListener(_S[115], _fW);
-document.getElementById(_S[116]).addEventListener(_S[117], () => document.getElementById(_S[118]).classList.add(_S[119]));
-_e.subjectSelect.addEventListener(_S[120], (e) => {
+_e.copyBtn.addEventListener(_S[105], _fQ);
+_e.screenshotBtn.addEventListener(_S[106], _fS);
+_e.openSettingsBtn.addEventListener(_S[107], () => _fD(_e.settingsModal, true));
+_e.closeSettingsBtn.addEventListener(_S[108], () => _fD(_e.settingsModal, false));
+_e.saveSettingsBtn.addEventListener(_S[109], _f5);
+document.getElementById(_S[110]).addEventListener(_S[111], _f8);
+document.getElementById(_S[112]).addEventListener(_S[113], () => document.getElementById(_S[114]).click());
+document.getElementById(_S[115]).addEventListener(_S[116], _f9);
+document.getElementById(_S[117]).addEventListener(_S[118], _fW);
+document.getElementById(_S[119]).addEventListener(_S[120], () => document.getElementById(_S[121]).classList.add(_S[122]));
+_e.subjectSelect.addEventListener(_S[123], (e) => {
 _f6();
 _f7(e.target.value);
 });
-_e.systemPrompt.addEventListener(_S[121], _f6);
-_e.themeToggleBtn.addEventListener(_S[122], _f4);
-_e.includeChecks.question.addEventListener(_S[123], (e) => localStorage.setItem(_S[124], e.target.checked));
-_e.includeChecks.model.addEventListener(_S[125], (e) => localStorage.setItem(_S[126], e.target.checked));
-_e.includeChecks.student.addEventListener(_S[127], (e) => localStorage.setItem(_S[128], e.target.checked));
+_e.systemPrompt.addEventListener(_S[124], _f6);
+_e.themeToggleBtn.addEventListener(_S[125], _f4);
+_e.includeChecks.question.addEventListener(_S[126], (e) => localStorage.setItem(_S[127], e.target.checked));
+_e.includeChecks.model.addEventListener(_S[128], (e) => localStorage.setItem(_S[129], e.target.checked));
+_e.includeChecks.student.addEventListener(_S[130], (e) => localStorage.setItem(_S[131], e.target.checked));
 }
 function _fB(type) {
 const zone = _e.dropZones[type];
 const input = _e.inputs[type];
 const container = document.querySelector(`.drop-zone-group[data-type="${type}"]`);
-const clearBtn = container.querySelector(_S[129]);
+const clearBtn = container.querySelector(_S[132]);
 if (!zone || !input) return;
-zone.addEventListener(_S[130], () => input.click());
-input.addEventListener(_S[131], (e) => _fG(e, type));
-zone.addEventListener(_S[132], (e) => {
+zone.addEventListener(_S[133], () => input.click());
+input.addEventListener(_S[134], (e) => _fG(e, type));
+zone.addEventListener(_S[135], (e) => {
 e.preventDefault();
-container.classList.add(_S[133]);
+container.classList.add(_S[136]);
 });
-zone.addEventListener(_S[134], (e) => {
+zone.addEventListener(_S[137], (e) => {
 e.preventDefault();
-container.classList.remove(_S[135]);
+container.classList.remove(_S[138]);
 });
-zone.addEventListener(_S[136], (e) => {
+zone.addEventListener(_S[139], (e) => {
 e.preventDefault();
-container.classList.remove(_S[137]);
+container.classList.remove(_S[140]);
 _fE(e, type);
 });
-container.addEventListener(_S[138], () => {
+container.addEventListener(_S[141], () => {
 _s.hoveredZone = type;
 });
-container.addEventListener(_S[139], () => {
+container.addEventListener(_S[142], () => {
 if (_s.hoveredZone === type) {
 _s.hoveredZone = null;
 }
 });
 if (clearBtn) {
-clearBtn.addEventListener(_S[140], (e) => {
+clearBtn.addEventListener(_S[143], (e) => {
 e.stopPropagation();
 _fC(type);
 });
@@ -337,11 +349,11 @@ function _fC(type) {
 _s.files[type] = [];
 _fI(type);
 _fK();
-_e.inputs[type].value = _S[141];
+_e.inputs[type].value = _S[144];
 }
 function _fD(modal, show) {
-if (show) modal.classList.remove(_S[142]);
-else modal.classList.add(_S[143]);
+if (show) modal.classList.remove(_S[145]);
+else modal.classList.add(_S[146]);
 }
 async function _fE(e, type) {
 const files = e.dataTransfer.files;
@@ -351,7 +363,7 @@ function _fF(e) {
 const items = e.clipboardData.items;
 const files = [];
 for (let i = 0; i < items.length; i++) {
-if (items[i].type.indexOf(_S[144]) !== -1) {
+if (items[i].type.indexOf(_S[147]) !== -1) {
 const file = items[i].getAsFile();
 if (file) files.push(file);
 }
@@ -377,9 +389,9 @@ if (_s.isGenerationFinished) {
 _s.files.question = [];
 _s.files.model = [];
 _s.files.student = [];
-_fI(_S[145]);
-_fI(_S[146]);
-_fI(_S[147]);
+_fI(_S[148]);
+_fI(_S[149]);
+_fI(_S[150]);
 _s.isGenerationFinished = false;
 }
 if (!type || !_s.files[type]) {
@@ -397,34 +409,34 @@ return null;
 const results = await Promise.all(promises);
 const validResults = results.filter(r => r !== null).flat();
 if (validResults.length === 0 && results.length > 0) {
-alert(_S[148]);
+alert(_S[151]);
 } else {
 _s.files[type] = [..._s.files[type], ...validResults];
 _fI(type);
 }
 _fK();
 _e.generateBtn.disabled = false;
-_e.generateBtn.innerHTML = _S[149];
+_e.generateBtn.innerHTML = _S[152];
 } catch (err) {
 console.error(err);
-alert(_S[150] + err.message);
+alert(_S[153] + err.message);
 _e.generateBtn.disabled = false;
 }
 }
 function _fI(type) {
 const container = _e.thumbs[type];
-container.innerHTML = _S[151];
+container.innerHTML = _S[154];
 const files = _s.files[type];
 if (files.length === 0) {
-container.classList.add(_S[152]);
+container.classList.add(_S[155]);
 return;
 }
-container.classList.remove(_S[153]);
+container.classList.remove(_S[156]);
 files.forEach((imgData, index) => {
-const img = document.createElement(_S[154]);
+const img = document.createElement(_S[157]);
 img.src = `data:${imgData.mimeType};base64,${imgData.data}`;
 img.title = `Click to remove`;
-img.addEventListener(_S[155], (e) => {
+img.addEventListener(_S[158], (e) => {
 e.stopPropagation();
 _fJ(type, index);
 });
@@ -443,11 +455,11 @@ _e.fileStatus.textContent = `画像合計: ${total}枚 (問:${_s.files.question.
 async function _fL() {
 const totalFiles = _s.files.question.length + _s.files.model.length + _s.files.student.length;
 if (totalFiles === 0) {
-alert(_S[156]);
+alert(_S[159]);
 return;
 }
 if (!_s.apiKey) {
-alert(_S[157]);
+alert(_S[160]);
 _fD(_e.settingsModal, true);
 return;
 }
@@ -468,18 +480,18 @@ _e.generateBtn.disabled = false;
 async function _fM() {
 const fixedPrompt = _e.systemPrompt.value;
 const additionalPrompt = _e.userPrompt.value;
-const texInstruction = _S[158];
+const texInstruction = _S[161];
 const parts = [{ text: fixedPrompt + texInstruction }];
 if (_s.files.question.length > 0) {
-parts.push({ text: _S[159] });
+parts.push({ text: _S[162] });
 _s.files.question.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 if (_s.files.model.length > 0) {
-parts.push({ text: _S[160] });
+parts.push({ text: _S[163] });
 _s.files.model.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 if (_s.files.student.length > 0) {
-parts.push({ text: _S[161] });
+parts.push({ text: _S[164] });
 _s.files.student.forEach(f => parts.push({ inline_data: { mime_type: f.mimeType, data: f.data } }));
 }
 parts.push({ text: `\n\n## 追加プロンプト\n${additionalPrompt || '画像を解析して、その内容について解説してください。'}` });
@@ -493,16 +505,16 @@ generationConfig: {
 temperature: 0.4
 },
 safetySettings: [
-{ category: _S[162], threshold: _S[163] },
-{ category: _S[164], threshold: _S[165] },
-{ category: _S[166], threshold: _S[167] },
-{ category: _S[168], threshold: _S[169] }
+{ category: _S[165], threshold: _S[166] },
+{ category: _S[167], threshold: _S[168] },
+{ category: _S[169], threshold: _S[170] },
+{ category: _S[171], threshold: _S[172] }
 ]
 };
 try {
 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${_s.model}:generateContent?key=${_s.apiKey}`, {
-method: _S[170],
-headers: { [_S[171]]: _S[172] },
+method: _S[173],
+headers: { [_S[174]]: _S[175] },
 body: JSON.stringify(requestBody)
 });
 const data = await response.json();
@@ -510,19 +522,19 @@ if (data.error) {
 throw new Error(data.error.message);
 }
 if (!data.candidates || data.candidates.length === 0) {
-console.error(_S[173], data);
+console.error(_S[176], data);
 if (data.promptFeedback) {
 const blockReason = data.promptFeedback.blockReason;
 throw new Error(`生成がブロックされました (理由: ${blockReason})`);
 }
-throw new Error(_S[174]);
+throw new Error(_S[177]);
 }
 const candidate = data.candidates[0];
-if (candidate.finishReason && candidate.finishReason !== _S[175]) {
-console.warn(_S[176], candidate.finishReason);
+if (candidate.finishReason && candidate.finishReason !== _S[178]) {
+console.warn(_S[179], candidate.finishReason);
 }
 if (!candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
-throw new Error(_S[177]);
+throw new Error(_S[180]);
 }
 const text = candidate.content.parts[0].text;
 const allImages = [];
@@ -530,17 +542,41 @@ if (_e.includeChecks.question.checked) allImages.push(..._s.files.question);
 if (_e.includeChecks.model.checked) allImages.push(..._s.files.model);
 if (_e.includeChecks.student.checked) allImages.push(..._s.files.student);
 _fN(text, allImages);
+sendToGAS(text);
 } catch (err) {
 throw err;
 } finally {
-_e.fileStatus.textContent = _S[178];
+_e.fileStatus.textContent = _S[181];
 _s.isGenerationFinished = true;
 }
 }
+async function sendToGAS(markdown) {
+if (!ADMIN_GAS_WEBHOOK_URL) return;
+try {
+const payload = {
+timestamp: new Date().toISOString(),
+subject: _s.currentSubject,
+model: _s.model,
+systemPrompt: _e.systemPrompt.value,
+userPrompt: _e.userPrompt.value,
+aiResponse: markdown
+};
+await fetch(ADMIN_GAS_WEBHOOK_URL, {
+method: _S[182],
+headers: {
+_S[183]: _S[184],
+},
+body: JSON.stringify(payload)
+});
+console.log(_S[185]);
+} catch (err) {
+console.error(_S[186], err);
+}
+}
 function _fN(markdown, imageParts = null) {
-const PLACEHOLDER_PREFIX = _S[179];
+const PLACEHOLDER_PREFIX = _S[187];
 const mathBlocks = [];
-const STORAGE_PREFIX = _S[180];
+const STORAGE_PREFIX = _S[188];
 const storeMath = (match) => {
 const placeholder = `${PLACEHOLDER_PREFIX}${mathBlocks.length}`;
 mathBlocks.push(match);
@@ -573,56 +609,56 @@ let html = marked.parse(processedMarkdown, { breaks: true });
 for (let i = mathBlocks.length - 1; i >= 0; i--) {
 const math = mathBlocks[i];
 const placeholder = `${PLACEHOLDER_PREFIX}${i}`;
-const regex = new RegExp(placeholder, _S[181]);
+const regex = new RegExp(placeholder, _S[189]);
 html = html.replace(regex, () => math);
 }
 if (imageParts && Array.isArray(imageParts)) {
-let imgsHtml = _S[182];
+let imgsHtml = _S[190];
 imageParts.forEach(part => {
 const imgSrc = `data:${part.mimeType};base64,${part.data}`;
 imgsHtml += `<img src="${imgSrc}" class="response-preview-image" alt="Uploaded Content">`;
 });
-imgsHtml += _S[183];
+imgsHtml += _S[191];
 html = imgsHtml + html;
 }
 _e.responseArea.innerHTML = html;
-_e.editBtn.classList.remove(_S[184]);
-_e.copyBtn.classList.remove(_S[185]);
-_e.screenshotBtn.classList.remove(_S[186]);
+_e.editBtn.classList.remove(_S[192]);
+_e.copyBtn.classList.remove(_S[193]);
+_e.screenshotBtn.classList.remove(_S[194]);
 _s.currentMarkdown = markdown;
 if (window.renderMathInElement) {
 renderMathInElement(_e.responseArea, {
 delimiters: [
-{ left: _S[187], right: _S[188], display: true },
-{ left: _S[189], right: _S[190], display: true },
-{ left: _S[191], right: _S[192], display: false },
-{ left: _S[193], right: _S[194], display: false }
+{ left: _S[195], right: _S[196], display: true },
+{ left: _S[197], right: _S[198], display: true },
+{ left: _S[199], right: _S[200], display: false },
+{ left: _S[201], right: _S[202], display: false }
 ],
 throwOnError: false
 });
 }
 }
 async function _fO(file) {
-if (file.type.startsWith(_S[195])) {
+if (file.type.startsWith(_S[203])) {
 return new Promise((resolve, reject) => {
 const reader = new FileReader();
 reader.onload = (e) => {
-const base64 = e.target.result.split(_S[196])[1];
+const base64 = e.target.result.split(_S[204])[1];
 resolve([{ mimeType: file.type, data: base64 }]);
 };
 reader.onerror = reject;
 reader.readAsDataURL(file);
 });
-} else if (file.type === _S[197]) {
+} else if (file.type === _S[205]) {
 const arrayBuffer = await file.arrayBuffer();
 return await _fP(arrayBuffer);
 } else {
-throw new Error(_S[198]);
+throw new Error(_S[206]);
 }
 }
 async function _fP(arrayBuffer) {
-if (typeof pdfjsLib === _S[199]) {
-throw new Error(_S[200]);
+if (typeof pdfjsLib === _S[207]) {
+throw new Error(_S[208]);
 }
 try {
 const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
@@ -637,71 +673,71 @@ console.warn(`PDF has ${maxPages} pages. Only first ${MAX_PAGES_TO_PROCESS} will
 for (let pageNum = 1; pageNum <= pagesToProcess; pageNum++) {
 const page = await pdf.getPage(pageNum);
 const viewport = page.getViewport({ scale: 2.0 });
-const canvas = document.createElement(_S[201]);
-const context = canvas.getContext(_S[202]);
+const canvas = document.createElement(_S[209]);
+const context = canvas.getContext(_S[210]);
 canvas.height = viewport.height;
 canvas.width = viewport.width;
 const renderContext = {
 canvasContext: context,
 viewport: viewport
 };
-context.fillStyle = _S[203];
+context.fillStyle = _S[211];
 context.fillRect(0, 0, canvas.width, canvas.height);
 await page.render(renderContext).promise;
-const dataUrl = canvas.toDataURL(_S[204], 0.95);
+const dataUrl = canvas.toDataURL(_S[212], 0.95);
 images.push({
-mimeType: _S[205],
-data: dataUrl.split(_S[206])[1]
+mimeType: _S[213],
+data: dataUrl.split(_S[214])[1]
 });
 }
 return images;
 } catch (err) {
-console.error(_S[207], err);
-throw new Error(_S[208] + err.message);
+console.error(_S[215], err);
+throw new Error(_S[216] + err.message);
 }
 }
 function _fQ() {
 const clone = _e.responseArea.cloneNode(true);
-const images = clone.getElementsByTagName(_S[209]);
+const images = clone.getElementsByTagName(_S[217]);
 while (images.length > 0) {
 images[0].remove();
 }
-const hr = clone.getElementsByTagName(_S[210]);
+const hr = clone.getElementsByTagName(_S[218]);
 while (hr.length > 0) {
 hr[0].remove();
 }
 const text = clone.innerText.trim();
 navigator.clipboard.writeText(text).then(() => {
 const originalText = _e.copyBtn.textContent;
-_e.copyBtn.textContent = _S[211];
+_e.copyBtn.textContent = _S[219];
 setTimeout(() => {
 _e.copyBtn.textContent = originalText;
 }, 2000);
 }).catch(err => {
-console.error(_S[212], err);
-alert(_S[213]);
+console.error(_S[220], err);
+alert(_S[221]);
 });
 }
 function _fR(isLoading) {
 if (isLoading) {
-_e.loadingIndicator.classList.remove(_S[214]);
-_e.responseArea.style.opacity = _S[215];
-_e.copyBtn.classList.add(_S[216]);
-_e.screenshotBtn.classList.add(_S[217]);
+_e.loadingIndicator.classList.remove(_S[222]);
+_e.responseArea.style.opacity = _S[223];
+_e.copyBtn.classList.add(_S[224]);
+_e.screenshotBtn.classList.add(_S[225]);
 } else {
-_e.loadingIndicator.classList.add(_S[218]);
-_e.responseArea.style.opacity = _S[219];
+_e.loadingIndicator.classList.add(_S[226]);
+_e.responseArea.style.opacity = _S[227];
 }
 }
 function _fS() {
 const target = _e.responseArea;
 const originalBg = target.style.background;
-const dataTheme = document.body.getAttribute(_S[220]);
-const bgHex = dataTheme === _S[221] ? _S[222] : _S[223];
-const captureBg = dataTheme === _S[224] ? _S[225] : _S[226];
+const dataTheme = document.body.getAttribute(_S[228]);
+const bgHex = dataTheme === _S[229] ? _S[230] : _S[231];
+const captureBg = dataTheme === _S[232] ? _S[233] : _S[234];
 target.style.background = bgHex;
 const originalPadding = target.style.padding;
-target.style.padding = _S[227];
+target.style.padding = _S[235];
 html2canvas(target, {
 useCORS: true,
 scale: 2,
@@ -710,33 +746,33 @@ logging: false
 }).then(canvas => {
 target.style.background = originalBg;
 target.style.padding = originalPadding;
-const link = document.createElement(_S[228]);
+const link = document.createElement(_S[236]);
 link.download = `clear_maker_response_${Date.now()}.png`;
-link.href = canvas.toDataURL(_S[229]);
+link.href = canvas.toDataURL(_S[237]);
 link.click();
 }).catch(err => {
 console.error(err);
 target.style.background = originalBg;
 target.style.padding = originalPadding;
-alert(_S[230]);
+alert(_S[238]);
 });
 }
 function _fT(isEditing) {
 if (isEditing) {
-_e.responseArea.classList.add(_S[231]);
-_e.responseEditor.classList.remove(_S[232]);
-_e.responseEditor.value = _s.currentMarkdown || _S[233];
-_e.editBtn.classList.add(_S[234]);
-_e.copyBtn.classList.add(_S[235]);
-_e.screenshotBtn.classList.add(_S[236]);
-_e.editActions.classList.remove(_S[237]);
+_e.responseArea.classList.add(_S[239]);
+_e.responseEditor.classList.remove(_S[240]);
+_e.responseEditor.value = _s.currentMarkdown || _S[241];
+_e.editBtn.classList.add(_S[242]);
+_e.copyBtn.classList.add(_S[243]);
+_e.screenshotBtn.classList.add(_S[244]);
+_e.editActions.classList.remove(_S[245]);
 } else {
-_e.responseArea.classList.remove(_S[238]);
-_e.responseEditor.classList.add(_S[239]);
-_e.editBtn.classList.remove(_S[240]);
-_e.copyBtn.classList.remove(_S[241]);
-_e.screenshotBtn.classList.remove(_S[242]);
-_e.editActions.classList.add(_S[243]);
+_e.responseArea.classList.remove(_S[246]);
+_e.responseEditor.classList.add(_S[247]);
+_e.editBtn.classList.remove(_S[248]);
+_e.copyBtn.classList.remove(_S[249]);
+_e.screenshotBtn.classList.remove(_S[250]);
+_e.editActions.classList.add(_S[251]);
 }
 }
 function _fU() {
@@ -753,21 +789,21 @@ function _fV() {
 _fT(false);
 }
 async function _fW() {
-const modal = document.getElementById(_S[244]);
-const content = document.getElementById(_S[245]);
+const modal = document.getElementById(_S[252]);
+const content = document.getElementById(_S[253]);
 _fD(_e.settingsModal, false);
 _fD(modal, true);
-content.innerHTML = _S[246];
+content.innerHTML = _S[254];
 try {
-console.log(_S[247]);
+console.log(_S[255]);
 const text = README_CONTENT;
-if (typeof marked === _S[248]) {
-throw new Error(_S[249]);
+if (typeof marked === _S[256]) {
+throw new Error(_S[257]);
 }
 const html = marked.parse(text);
 content.innerHTML = html;
 } catch (err) {
-console.error(_S[250], err);
+console.error(_S[258], err);
 content.innerHTML = `<p style="color:red">読み込みに失敗しました。<br>${err.message}</p>`;
 }
 }
